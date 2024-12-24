@@ -1,20 +1,30 @@
-/* @font-face {
+@font-face {
   font-family: 'DungGeunMo';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-} */
+}
 
 
 main {
   width: 1200px;
+  height: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  background-color: rgba(255, 0, 0, 0.379);
+
+  border-radius: 5px;
 }
 
 #front {
     z-index: 1;
     position: absolute;
     background-color: #A61C35;
-   
+    background-image: url('../source/front_background.avif');
+    background-position: bottom center;
+    background-size: 66% ;
+
     width: 600px;
     height: 600px;
     text-align: center;
@@ -39,8 +49,8 @@ main {
   }
 
   #frontTitle {
-    background-color: antiquewhite;
-    color: rgb(220, 56, 56);
+    background-color: rgb(243, 239, 234);
+    color: green;
     font-size: 40pt;
     text-align: center;
     padding: 70px 40px 70px 40px;  
@@ -49,12 +59,13 @@ main {
     inset -4px -2px 1px 1px lightgray,
     inset 4px 0px 1px 1px lightgray;   
   }
+
   
   #frontPic {
     width: 200px;
     height: 200px;
     margin: 40px 40px 30px 40px;
-    border-radius: 50%;
+    border-radius: 40%;
   }
   
   #inside {
@@ -100,6 +111,7 @@ main {
     color:#000;
     font-size: 14pt;
     text-align: center;
+    font-family: 'DungGeunMo';
   }
   
   #insideFrom {
@@ -111,9 +123,10 @@ main {
   
 
   .btn {
-    font-size: 1.2em;
+    margin-top: 18px;
+    font-size: 1.4em;
     width: 160px;
-    height: 40px;
+    height: 70px;
     background: #735E5A;
     color: #F2F2F2;
     border: 0px;
@@ -139,7 +152,7 @@ main {
   
   .btn::after {
     content: '';
-    background: black;
+    background: #1c2644;
     position: absolute;
     left: -2.5%;
     top: 0;
@@ -150,7 +163,7 @@ main {
   
   .btn::before {
     content: '';
-    background: black;
+    background: #1c2644;
     position: absolute;
     left: 0;
     top: -5%;
@@ -166,6 +179,9 @@ main {
     background-image: url('https://img.freepik.com/premium-photo/pixel-art-deer-head_853677-337801.jpg?w=1380');
     background-position: center;
     background-size: cover;
+
+    border: none;
+    border-radius: 5px;
   }
 
   .close-btn:hover {
