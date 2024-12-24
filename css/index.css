@@ -13,9 +13,8 @@ body {
     background-color: #1c2644;
 }
 #main-title {
-    margin: 20px 0;
+    margin: 0px 0;
     font-size: 4em;
-    color: #333;
 }
 .container {
     margin: 0 auto;
