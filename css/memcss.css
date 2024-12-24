@@ -1,10 +1,13 @@
+//멤버페이지 트리 레이아웃
+
 .mem_container{
     width: 1200px;
     margin: 0 auto;
+    position: inherit;
 }
 .mem_treebox{
     border: 1px solid blue;
-    width: 1200px;
+    width: 1000px;
     margin: 0 auto;
     padding: 20px 100px;
     align-items: center;
@@ -61,4 +64,18 @@
     background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgFszAFLuDhGfTxyUE79b-aVFbsxIei5xciu1WeXeeWJ9GFKL4vWRBhX1Jy4GcP6NBns2H7spr14Cr7qQPyBXEjE1WMHkyQlKYsGGTRJkfJc8XYQ-IlVmvnHs5OdwgZNKzEEhdB6bfrsmtxoYiCPRmUWb1Mf73jdJgejKCPv2qHBRZztifZa8C0RwZ2K4/s1600/profile_mem_5.png);
     background-size: cover;
     background-position: center;
+}
+
+//멤버 상세 프로필 카드 css
+
+.mem_cardbox{
+    width: 1200px;
+    height: 840px;
+    background-color: #FFECBD;
+}
+
+.mem_fecelist{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
