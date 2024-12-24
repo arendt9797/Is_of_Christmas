@@ -1,0 +1,75 @@
+/* team.css 코드 선언 */
+.team_means {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 1px solid blue;
+    width: 390px;
+    height: 543px;
+    background-image: url("../source/card1.png");
+    background-size: cover;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.team_purpose {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 230px;
+    background-color: #f9f9f9;
+}
+
+.team_promise {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+
+/* 기본 코드 유지 (향후 삭제) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+.maintitle {
+    margin: 20px 0;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.menu a{
+    margin: 30px;
+}
+
+.link img{
+    width: 120px;
+    height: auto;
+}
+.link {
+    display: inline-block;
+    margin: 15px;
+    color: #333;
+}
+.link span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
