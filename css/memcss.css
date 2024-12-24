@@ -1,0 +1,22 @@
+.mem_container{
+    border: 1px solid red;
+    width: 1200px;
+    margin: 0 auto;
+}
+.mem_treebox{
+    border: 1px solid blue;
+}
+
+.mem_tree{
+    width: 980px;
+    height: auto;
+    background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs0NjQo7WDsGnLUrLJLZ-5e1Ql0K9AxuvDRUpCSDntLHY0VSCzeSyKCkia7OW0pxoR1ueh3wMd-4TNPXgRkVvrSRWEM45rSn_JkceCE3X_MaImZFTWP2wsU1eIiAZiKwAwcKIe-zvZcwJdAZ_sMoABBNstvDrit27XIB40yKVX3_KF-9sHSLMvNilFVGg/s320/member_tree.png);
+    background-size: contain;
+    background-position: center;
+}
+
+.mem_on{
+    width: 164px;
+    height: 164px;
+    background-color: green;
+}
