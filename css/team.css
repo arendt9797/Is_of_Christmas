@@ -38,7 +38,7 @@ body {
     background-position: center;
     text-align: center; */
     width: 390px;
-    height: 543px;
+    height: 512px;
     background-image: url("../source/means.png");
     background-color: #f9f9f9;
 }
@@ -71,5 +71,6 @@ body {
     background-color: #65b9e6; /* Blue */
     background-image: url(../source/promise.png);
     width: 672px;
-    height: 206px;
+    /* height: 206px; */
+    height: 174px;
 } 
