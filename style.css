@@ -21,8 +21,12 @@ h1 {
     margin: 20px 0;
 }
 .menu a{
-    border: #333 solid;
-    margin: 20px;
+    margin: 30px;
+}
+
+.link img{
+    width: 120px;
+    height: auto;
 }
 .link {
     display: inline-block;
