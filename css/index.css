@@ -26,23 +26,31 @@ body {
     justify-content: center;
     margin: 20px 0;
     font-family: "Dongle", serif;
+    /* padding: 0px 10px 0px 10px; */
 }
 .menu a{
-    margin: 30px 50px;
+    margin: 30px 20px;
     text-decoration: none;
+    box-sizing: border-box;
+    width: 140px;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu a:hover{
     background-color: #fb8d8d62;
-    padding: 0px 10px 0px 10px;
     border-radius: 10%;
     border: 3px solid white;
+    
     /* cursor: pointer; */
 }
 
 .link img{
-    width: 120px;
-    height: 130px;
+    width: 100px;
+    height: 110px;
 }
 .link {
     display: inline-block;
