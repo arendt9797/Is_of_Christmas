@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Gowun+Dodum&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Dongle&family=Gowun+Dodum&display=swap');
-*{
+
+* {
     font-family: "Bagel Fat One", serif;
     font-weight: 400;
 }
@@ -12,10 +13,12 @@ body {
     text-align: center;
     background-color: #1c2644;
 }
+
 #main-title {
     margin: 0px 0;
     font-size: 4em;
 }
+
 .container {
     margin: 0 auto;
     padding: 20px;
@@ -28,7 +31,8 @@ body {
     font-family: "Dongle", serif;
     /* padding: 0px 10px 0px 10px; */
 }
-.menu a{
+
+.menu a {
     margin: 30px 20px;
     text-decoration: none;
     box-sizing: border-box;
@@ -40,23 +44,24 @@ body {
     justify-content: center;
 }
 
-.menu a:hover{
+.menu a:hover {
     background-color: #fb8d8d62;
     border-radius: 10%;
     border: 3px solid white;
-    
     /* cursor: pointer; */
 }
 
-.link img{
+.link img {
     width: 100px;
     height: 110px;
 }
+
 .link {
     display: inline-block;
     margin: 15px;
     color: #e3e3e3
 }
+
 .link span {
     display: block;
     margin-top: 10px;
@@ -75,4 +80,82 @@ body {
 
 .others {
     color: #e3e3e3;
+}
+
+
+/* 눈 포지션 */
+.snow_wrap .snow_div {   
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    animation: snow_shake 3s ease-in-out infinite;
+    user-select: none;
+}
+
+.snow_wrap .snow_div p {
+    animation: snow_fall 10s linear infinite;}
+.snow_wrap .snow_div:nth-of-type(0) { left: 0%;animation-delay: 0s;}
+.snow_wrap .snow_div:nth-of-type(0) p { animation-delay: 0s; }
+.snow_wrap .snow_div:nth-of-type(1) { left: 10%; animation-delay: 1s; }
+.snow_wrap .snow_div:nth-of-type(1) p { animation-delay: 1s; }
+.snow_wrap .snow_div:nth-of-type(2) { left: 20%; animation-delay: 0.5s; }
+.snow_wrap .snow_div:nth-of-type(2) p { animation-delay: 6s; }
+.snow_wrap .snow_div:nth-of-type(3) { left: 30%; animation-delay: 2s; }
+.snow_wrap .snow_div:nth-of-type(3) p { animation-delay: 4s; }
+.snow_wrap .snow_div:nth-of-type(4) { left: 40%; animation-delay: 2s; }
+.snow_wrap .snow_div:nth-of-type(4) p { animation-delay: 2s; }
+.snow_wrap .snow_div:nth-of-type(5) { left: 50%; animation-delay: 3s; }
+.snow_wrap .snow_div:nth-of-type(5) p { animation-delay: 8s; }
+.snow_wrap .snow_div:nth-of-type(6) { left: 60%; animation-delay: 2s; }
+.snow_wrap .snow_div:nth-of-type(6) p { animation-delay: 6s; }
+.snow_wrap .snow_div:nth-of-type(7) { left: 70%; animation-delay: 1s; }
+.snow_wrap .snow_div:nth-of-type(7) p { animation-delay: 2.5s; }
+.snow_wrap .snow_div:nth-of-type(8) { left: 80%; animation-delay: 0s; }
+.snow_wrap .snow_div:nth-of-type(8) p { animation-delay: 1s; }
+.snow_wrap .snow_div:nth-of-type(9) { left: 90%; animation-delay: 1.5s; }
+.snow_wrap .snow_div:nth-of-type(9) p { animation-delay: 3s; }
+.snow_wrap .snow_div:nth-of-type(10) { left: 25%; animation-delay: 0.5s; }
+.snow_wrap .snow_div:nth-of-type(10) p { animation-delay: 2s; }
+.snow_wrap .snow_div:nth-of-type(11) { left: 65%; animation-delay: 2.5s; }
+.snow_wrap .snow_div:nth-of-type(11) p { animation-delay: 4s; }
+.snow_wrap .snow_div:nth-of-type(12) { left: 85%; animation-delay: 2s; }
+.snow_wrap .snow_div:nth-of-type(12) p { animation-delay: 7.5s; }
+.snow_wrap .snow_div:nth-of-type(13) { left: 5%; animation-delay: 0s; }
+.snow_wrap .snow_div:nth-of-type(13) p { animation-delay: 2.5s; }
+.snow_wrap .snow_div:nth-of-type(14) { left: 45%; animation-delay: 1.5s; }
+.snow_wrap .snow_div:nth-of-type(14) p { animation-delay: 3.5s; }
+.snow_wrap .snow_div:nth-of-type(15) { left: 75%; animation-delay: 1s; }
+.snow_wrap .snow_div:nth-of-type(15) p { animation-delay: 2s; }
+.snow_wrap .snow_div:nth-of-type(16) { left: 35%; animation-delay: 2.5s; }
+.snow_wrap .snow_div:nth-of-type(16) p { animation-delay: 4.5s; }
+.snow_wrap .snow_div:nth-of-type(17) { left: 15%; animation-delay: 1s; }
+.snow_wrap .snow_div:nth-of-type(17) p { animation-delay: 3s; }
+.snow_wrap .snow_div:nth-of-type(18) { left: 95%; animation-delay: 0s; }
+.snow_wrap .snow_div:nth-of-type(18) p { animation-delay: 2s; }
+
+/* 눈내리는 css */
+@keyframes snow_shake {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(80px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes snow_fall {
+    0% {
+        transform: translateY(0vh);
+    }
+
+    100% {
+        transform: translateY(110vh);
+    }
 }
