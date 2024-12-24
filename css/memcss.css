@@ -1,4 +1,4 @@
-//멤버페이지 트리 레이아웃
+/* 멤버페이지 트리 레이아웃 */
 
 .mem_container{
     width: 1200px;
@@ -6,7 +6,6 @@
     position: inherit;
 }
 .mem_treebox{
-    border: 1px solid blue;
     width: 1000px;
     margin: 0 auto;
     padding: 20px 100px;
@@ -66,16 +65,92 @@
     background-position: center;
 }
 
-//멤버 상세 프로필 카드 css
+/* 멤버 상세 프로필 카드 css */
 
-.mem_cardbox{
-    width: 1200px;
-    height: 840px;
-    background-color: #FFECBD;
+.mem_cardbox {
+    width: 1000px;
+    height: 700px;
+    margin: 0 auto;
+    padding: 90px 56px;
+    background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXUHUhwO-iABwAUCBTqvRtSGeINWQX0vQk4SynXVaIutz0aR_VyPakpqK40VqgrWmfIJcfdUaouqIfas2EvbIE_7Ca05Ep1a-1o3nqdkWC9z53CdiYP8QyM06AIhDEXicIctJM9vbSLba9PYRl3u9JEiNZ19E2QuMfms-tPh7OxT-DgeJ7ae7MERHD4nM/s320/box_profile.png); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    justify-items: center;
 }
 
-.mem_fecelist{
+.mem_profile{
+    width: 900px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.mem_left{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.mem_infolist{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.mem_face{
+    margin-top: 20px;
+}
+.mem_name{
+    margin-bottom: 10px;
+}
+.mem_right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.mem_ment{
+    background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxvEksUHKRgqehHjCfdkybB81ZnIFJy9rG9IVrx8qjkYThNdpEtWzpKJC3cA0SKlVqtWrOTVbIPSS-ZY60yyTyEEYBzxBiqn7ccosL5ZrsZnvm7v1S1sO6S0EJl-9WPI7ER6ftU8lSrhTlmDKkPsWYKMJMFY8HTspN6d1rol1JqNWJ4_l-APv6hAKz_xA/s320/bubble.png);
+    width: 640px;
+    height: 107px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.mem_schedule{
+    width: 600px;
+    height: 230px;
+    background-color: #FC3E4F;
+    border: 4px solid black;
+    border-radius: 6px;
+}
+.mem_info{
+    width: 250px;
+    height: 56px;
+    background-color: rgba(255,255,255,0.3);
+    border: 4px solid black;
+    border-radius: 6px;
+}
+
+.mem_facelist{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    width: 900px;
+}
+
+.mem_face {
+    width: 140px;
+    height: 140px;
+    background-color: red;
 }
