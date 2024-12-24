@@ -1,0 +1,163 @@
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'DungGeunMo';
+}
+
+main {
+  margin: 10px;
+  width: 1200px;
+}
+
+#front {
+    z-index: 1;
+    position: absolute;
+    background-color: #A61C35;
+   
+    width: 600px;
+    height: 550px;
+    text-align: center;
+
+    transition: 1.7s;
+    transform-origin: 0;
+
+    border: none;
+    box-shadow: 
+    inset -4px 2px 1px 1px grey,
+    inset -4px -2px 1px 1px lightgray,
+    inset 4px 0px 1px 1px lightgray;   
+
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+  
+  .openCard {
+    transform: rotateY(100deg);
+  }
+
+  #frontTitle {
+    background-color: antiquewhite;
+    color: rgb(220, 56, 56);
+    font-size: 40pt;
+    text-align: center;
+    padding: 70px 40px 70px 40px;  
+    box-shadow: 
+    inset -4px 2px 1px 1px grey,
+    inset -4px -2px 1px 1px lightgray,
+    inset 4px 0px 1px 1px lightgray;   
+  }
+  
+  #frontPic {
+    width: 200px;
+    height: 200px;
+    margin: 40px 40px 30px 40px;
+    border-radius: 50%;
+  }
+  
+  #inside {
+    z-index: 0;
+    position: absolute;
+    background-color: #F9F9F9;
+    width: 600px;
+    height: 550px;
+    text-align: center;
+    border: none;
+    /* border-radius: 10px; */
+    box-shadow: 
+    inset -4px 2px 1px 1px grey,
+    inset -4px -2px 1px 1px lightgray,
+    inset 4px 0px 1px 1px lightgray;   
+
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+  
+  #insideTo {
+    color: #000;
+    font-size: 19pt;
+    text-align: left;
+    padding: 40px 0px 20px 40px;
+  }
+
+  #insideTo span {
+    font-size: 14pt;
+  }
+  
+  #insidePic {
+    width: 400px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  #message {
+    color: #30603a;
+    font-size: 14pt;
+    text-align: center;
+    padding: 0 20px 0 20px;
+  }
+  
+  #insideFrom {
+    color: #000;
+    font-size: 19pt;
+    text-align: right;
+    padding: 0 40px 0 20px;
+  }
+  
+
+  .btn {
+    font-size: 1.2em;
+    width: 160px;
+    height: 40px;
+    background: #735E5A;
+    color: #F2F2F2;
+    border: 0px;
+    position: relative;
+    box-shadow: 
+      inset -4px 2px 1px 1px grey,
+      inset -4px -2px 1px 1px lightgray,
+      inset 4px 0px 1px 1px lightgray;   
+  }
+  
+  .btn:hover {
+    cursor: pointer;
+    background-color: #A68B81;
+  }
+  
+  .btn:active {
+    top: 5px;
+    box-shadow: 
+      -4px 2px 1px 1px grey,
+      -4px -2px 1px 1px lightgray,
+      4px 0px 1px 1px lightgray; 
+  }
+  
+  .btn::after {
+    content: '';
+    background: black;
+    position: absolute;
+    left: -2.5%;
+    top: 0;
+    width: 105%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .btn::before {
+    content: '';
+    background: black;
+    position: absolute;
+    left: 0;
+    top: -5%;
+    width: 100%;
+    height: 113%;
+    z-index: -1;
+  }
