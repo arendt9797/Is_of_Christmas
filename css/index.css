@@ -33,9 +33,10 @@ body {
 }
 
 .menu a:hover{
-    background-color: #fb8d8d;
+    background-color: #fb8d8d62;
+    padding: 0px 10px 0px 10px;
     border-radius: 10%;
-    border: solid white;
+    border: 3px solid white;
     /* cursor: pointer; */
 }
 
