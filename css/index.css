@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Gowun+Dodum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Dongle&family=Gowun+Dodum&display=swap');
+*{
+    font-family: "Bagel Fat One", serif;
+    font-weight: 400;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,9 +12,9 @@ body {
     text-align: center;
     background-color: #f9f9f9;
 }
-.maintitle {
+#main-title {
     margin: 20px 0;
-    font-size: 2.5em;
+    font-size: 4em;
     color: #333;
 }
 .container {
@@ -19,14 +26,16 @@ body {
     display: flex;
     justify-content: center;
     margin: 20px 0;
+    font-family: "Dongle", serif;
 }
 .menu a{
-    margin: 30px;
+    margin: 30px 50px;
+    text-decoration: none;
 }
 
 .link img{
     width: 120px;
-    height: auto;
+    height: 130px;
 }
 .link {
     display: inline-block;
@@ -36,5 +45,19 @@ body {
 .link span {
     display: block;
     margin-top: 10px;
-    font-size: 1.1em;
+    font-size: 2em;
+    font-family: "Dongle", serif;
+}
+
+.christmas {
+    color: #FC3E4F;
+}
+
+.i {
+    color: green;
+    font-size: 7rem;
+}
+
+.others {
+    /* color: #f1f1f1; */
 }
