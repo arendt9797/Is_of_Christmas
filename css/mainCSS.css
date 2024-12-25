@@ -29,7 +29,7 @@ main {
   height: 600px;
   text-align: center;
 
-  transition-duration: 3s;
+  transition-duration: 2.5s;
   transition-timing-function: ease;
   transform-origin: 0;
 
@@ -191,6 +191,24 @@ main {
 .close_btn:hover {
   cursor: pointer;
   opacity: 0.6;
+  top: 5px;
+}
+
+@keyframes move{
+  0% {
+    transform : rotate(5deg) translateX(15px); /* 애니메이션이 0%만큼 동작시 */
+  }
+  25% {
+    transform : rotate(odeg) translateX(0px); /* 애니메이션이 50%만큼 동작시 */
+  }
+
+  25% {
+    transform : rotate(-5deg) translateX(-15px); /* 애니메이션이 50%만큼 동작시 */
+  }
+
+  100% {
+    transform : rotate(0deg) translateX(0px); /* 애니메이션이 100%만큼 동작시 */
+  }
 }
 
 .close_btn:focus {
@@ -198,10 +216,8 @@ main {
   background-position: bottom right;
   background-size: 200%;
   opacity: 1;
-}
-
-.close_btn:active {
-  top: 15px;
+  animation: move 0.2s;
+  animation-iteration-count : 6;
 }
 
 /* 모달시작 */
