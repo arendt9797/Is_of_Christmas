@@ -190,12 +190,14 @@ main {
 
 .close_btn:hover {
   cursor: pointer;
+  opacity: 0.6;
 }
 
 .close_btn:focus {
   background-image: url('../source/close_btn_hover_temporary.png');
   background-position: bottom right;
   background-size: 200%;
+  opacity: 1;
 }
 
 .close_btn:active {
