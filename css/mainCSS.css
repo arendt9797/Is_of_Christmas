@@ -29,7 +29,8 @@ main {
   height: 600px;
   text-align: center;
 
-  transition: 1.7s;
+  transition-duration: 3s;
+  transition-timing-function: ease;
   transform-origin: 0;
 
   border: none;
@@ -177,6 +178,8 @@ main {
   width: 300px;
   height: 300px;
 
+  position: relative;
+
   background-image: url('https://img.freepik.com/premium-vector/pixel-art-christmas-birthday-gift-red-gold-box-bit-game-item-white-background_360488-5.jpg?w=996');
   background-position: center;
   background-size: cover;
@@ -187,11 +190,17 @@ main {
 
 .close_btn:hover {
   cursor: pointer;
+}
+
+.close_btn:focus {
   background-image: url('../source/close_btn_hover_temporary.png');
   background-position: bottom right;
   background-size: 200%;
 }
 
+.close_btn:active {
+  top: 15px;
+}
 
 /* 모달시작 */
 /* 버튼으로 사용할 라벨 디자인 */
@@ -264,7 +273,6 @@ main {
     inset 4px 0px 1px 1px lightgray;
 
   overflow: hidden;
-
 
   background-image: url('https://img.freepik.com/free-vector/flat-design-pixel-art-christmas_23-2149729093.jpg?uid=R180403422&ga=GA1.1.733110861.1734924592&semt=ais_hybrid');
   background-position: center;
