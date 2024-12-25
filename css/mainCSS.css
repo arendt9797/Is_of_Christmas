@@ -18,173 +18,312 @@ main {
 }
 
 #front {
-    z-index: 1;
-    position: absolute;
-    background-color: #A61C35;
-    background-image: url('../source/front_background.avif');
-    background-position: bottom center;
-    background-size: 66% ;
+  z-index: 1;
+  position: absolute;
+  background-color: #A61C35;
+  background-image: url('../source/front_background_tentative.avif');
+  background-position: bottom center;
+  background-size: 66%;
 
-    width: 600px;
-    height: 600px;
-    text-align: center;
+  width: 600px;
+  text-align: center;
 
-    transition: 1.7s;
-    transform-origin: 0;
+  transition: 1.7s;
+  transform-origin: 0;
 
-    border: none;
-    box-shadow: 
+  border: none;
+  box-shadow:
     inset -4px 2px 1px 1px grey,
     inset -4px -2px 1px 1px lightgray,
-    inset 4px 0px 1px 1px lightgray;   
+    inset 4px 0px 1px 1px lightgray;
 
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-  }
-  
-  .openCard {
-    transform: rotateY(100deg);
-  }
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
 
-  #frontTitle {
-    background-color: rgb(243, 239, 234);
-    color: green;
-    font-size: 40pt;
-    text-align: center;
-    padding: 70px 40px 70px 40px;  
-    box-shadow: 
+.openCard {
+  transform: rotateY(94deg);
+}
+
+#frontTitle {
+  background-color: rgb(243, 239, 234);
+  color: green;
+  font-size: 40pt;
+  text-align: center;
+  padding: 70px 40px 70px 40px;
+  box-shadow:
     inset -4px 2px 1px 1px grey,
     inset -4px -2px 1px 1px lightgray,
-    inset 4px 0px 1px 1px lightgray;   
-  }
+    inset 4px 0px 1px 1px lightgray;
+}
 
-  
-  #frontPic {
-    width: 200px;
-    height: 200px;
-    margin: 40px 40px 30px 40px;
-    border-radius: 40%;
-  }
-  
-  #inside {
-    z-index: 0;
-    position: absolute;
-    background-color: #F9F9F9;
-    width: 600px;
-    height: 600px;
-    text-align: center;
 
-    border: none;
-    /* border-radius: 10px; */
-    box-shadow: 
+#frontPic {
+  width: 200px;
+  height: 200px;
+  margin: 40px 40px 30px 40px;
+  border-radius: 40%;
+}
+
+#inside {
+  z-index: 0;
+  position: absolute;
+  background-color: white;
+  width: 600px;
+  height: 600px;
+  text-align: center;
+
+  border: none;
+  /* border-radius: 10px; */
+  box-shadow:
     inset -4px 2px 1px 1px grey,
     inset -4px -2px 1px 1px lightgray,
-    inset 4px 0px 1px 1px lightgray;   
- 
-    /* 안쪽 카드 위치고정 */
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-  }
-  
-  #insideTo {
-    color: #000;
-    font-size: 19pt;
-    text-align: left;
-    padding: 20px 0px 20px 20px;
-  }
+    inset 4px 0px 1px 1px lightgray;
 
-  #insideTo span {
-    font-size: 14pt;
-  }
-  
-  #insidePic {
-    width: 200px;
-    height: auto;
-    margin-bottom: 9px;
-  }
-  
-  #message {
-    color:#000;
-    font-size: 14pt;
-    text-align: center;
-    font-family: 'DungGeunMo';
-  }
-  
-  #insideFrom {
-    color: #000;
-    font-size: 19pt;
-    text-align: right;
-    padding: 0 40px 0 20px;
-  }
-  
+  /* 안쪽 카드 위치고정 */
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
 
-  .btn {
-    margin-top: 18px;
-    font-size: 1.4em;
-    width: 160px;
-    height: 70px;
-    background: #735E5A;
-    color: #F2F2F2;
-    border: 0px;
-    position: relative;
-    box-shadow: 
-      inset -4px 2px 1px 1px grey,
-      inset -4px -2px 1px 1px lightgray,
-      inset 4px 0px 1px 1px lightgray;   
-  }
-  
-  .btn:hover {
-    cursor: pointer;
-    background-color: #A68B81;
-  }
-  
-  .btn:active {
-    top: 5px;
-    box-shadow: 
-      -4px 2px 1px 1px grey,
-      -4px -2px 1px 1px lightgray,
-      4px 0px 1px 1px lightgray; 
-  }
-  
-  .btn::after {
-    content: '';
-    background: #1c2644;
-    position: absolute;
-    left: -2.5%;
-    top: 0;
-    width: 105%;
-    height: 100%;
-    z-index: -1;
-  }
-  
-  .btn::before {
-    content: '';
-    background: #1c2644;
-    position: absolute;
-    left: 0;
-    top: -5%;
-    width: 100%;
-    height: 113%;
-    z-index: -1;
-  }
+#insideTo {
+  color: #000;
+  font-size: 18pt;
+  text-align: left;
+  padding: 20px 0px 20px 30px;
+}
 
-  .close-btn {
-    width: 300px;
-    height: 300px;
+#insideTo span {
+  font-size: 14pt;
+}
 
-    background-image: url('https://img.freepik.com/premium-photo/pixel-art-deer-head_853677-337801.jpg?w=1380');
-    background-position: center;
-    background-size: cover;
+#insidePic {
+  width: 200px;
+  height: auto;
+  margin-bottom: 9px;
+}
 
-    border: none;
-    border-radius: 5px;
-  }
+#message {
+  color: #000;
+  font-size: 14pt;
+  text-align: center;
+  font-family: 'DungGeunMo';
+}
 
-  .close-btn:hover {
-    cursor: pointer;
-  }
-  
+#insideFrom {
+  color: #000;
+  font-size: 18pt;
+  text-align: right;
+  padding: 0 40px 0 20px;
+  margin-top: -50px;
+}
+
+
+.btn {
+  margin-top: 18px;
+  font-size: 1.4em;
+  width: 160px;
+  height: 70px;
+  background: #735E5A;
+  color: #F2F2F2;
+  border: 0px;
+  position: relative;
+  box-shadow:
+    inset -4px 2px 1px 1px grey,
+    inset -4px -2px 1px 1px lightgray,
+    inset 4px 0px 1px 1px lightgray;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #A68B81;
+}
+
+.btn:active {
+  top: 5px;
+  box-shadow:
+    -4px 2px 1px 1px grey,
+    -4px -2px 1px 1px lightgray,
+    4px 0px 1px 1px lightgray;
+}
+
+.btn::after {
+  content: '';
+  background: #1c2644;
+  position: absolute;
+  left: -2.5%;
+  top: 0;
+  width: 105%;
+  height: 100%;
+  z-index: -1;
+}
+
+.btn::before {
+  content: '';
+  background: #1c2644;
+  position: absolute;
+  left: 0;
+  top: -5%;
+  width: 100%;
+  height: 113%;
+  z-index: -1;
+}
+
+.close_btn {
+  width: 300px;
+  height: 300px;
+
+  background-image: url('https://img.freepik.com/premium-vector/pixel-art-christmas-birthday-gift-red-gold-box-bit-game-item-white-background_360488-5.jpg?w=996');
+  background-position: center;
+  background-size: cover;
+
+  border: none;
+  border-radius: 5px;
+}
+
+.close_btn:hover {
+  cursor: pointer;
+  background-image: url('../source/close_btn_hover_temporary.png');
+  background-position: bottom right;
+  background-size: 200%;
+}
+
+
+/* 모달시작 */
+/* 버튼으로 사용할 라벨 디자인 */
+#modal_btn {
+
+  position: relative;
+  margin: 0;
+  padding: 10px;
+
+  font-size: 14pt;
+  text-align: center;
+  font-family: 'DungGeunMo';
+
+  background-color: #F2F2F2;
+  box-shadow:
+    -4px 2px 1px 1px grey,
+    -4px -2px 1px 1px lightgray,
+    4px 0px 1px 1px lightgray;
+
+  font-weight: bolder;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#modal_btn:active {
+  top: 5px;
+  box-shadow:
+    -4px 2px 1px 1px grey,
+    -4px -2px 1px 1px lightgray,
+    4px 0px 1px 1px lightgray;
+}
+
+#modal_btn::after {
+  content: '';
+  background: #1c2644;
+  position: absolute;
+  left: -2.5%;
+  top: 0;
+  width: 105%;
+  height: 100%;
+  z-index: -1;
+}
+
+#modal_btn::before {
+  content: '';
+  background: #1c2644;
+  position: absolute;
+  left: 0;
+  top: -5%;
+  width: 100%;
+  height: 113%;
+  z-index: -1;
+}
+
+/* 모달 윈도우 디자인 */
+.box_modal {
+  position: relative;
+  display: block;
+  width: 550px;
+  height: 550px;
+
+  /* top:50%;
+    left:50%;   */
+  margin-top: -480px;
+  margin-left: 25px;
+
+  box-shadow:
+    inset -4px 2px 1px 1px grey,
+    inset -4px -2px 1px 1px lightgray,
+    inset 4px 0px 1px 1px lightgray;
+
+  overflow: hidden;
+
+
+  background-image: url('https://img.freepik.com/free-vector/flat-design-pixel-art-christmas_23-2149729093.jpg?uid=R180403422&ga=GA1.1.733110861.1734924592&semt=ais_hybrid');
+  background-position: center;
+  background-size: cover;
+
+  /* 아래 부분은 애니메이션 효과를 위한 부분 */
+  visibility: collapse;
+  opacity: 1;
+  filter: alpha(opacity=60);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  transform: scale(0, 0);
+}
+
+#modal_text {
+  color: white;
+  font-size: 1.4em;
+  margin-top: 20px;
+}
+
+/* .box_modal:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  } */
+
+
+/* 닫기 버튼으로 사용할 라벨 */
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.closer {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: 0;
+  background: #eee;
+
+  padding: 5px;
+  box-shadow:
+    inset -4px 2px 1px 1px grey,
+    inset -4px -2px 1px 1px lightgray,
+    inset 4px 0px 1px 1px lightgray;
+
+  text-align: center;
+  line-height: 26px;
+  font-size: 16x;
+  cursor: pointer;
+}
+
+
+/* 모달 윈도우가 팝업되는 코어 소스 */
+input#modal[type=checkbox]:checked~.box_modal {
+  visibility: visible;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
