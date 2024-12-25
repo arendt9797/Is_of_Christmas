@@ -232,45 +232,12 @@ main {
   text-align: center;
   font-family: 'DungGeunMo';
 
-  background-color: #F2F2F2;
-  box-shadow:
-    -4px 2px 1px 1px grey,
-    -4px -2px 1px 1px lightgray,
-    4px 0px 1px 1px lightgray;
-
-  font-weight: bolder;
   vertical-align: middle;
   cursor: pointer;
 }
 
-#modal_btn:active {
+#modal_btn:hover {
   top: 5px;
-  box-shadow:
-    -4px 2px 1px 1px grey,
-    -4px -2px 1px 1px lightgray,
-    4px 0px 1px 1px lightgray;
-}
-
-#modal_btn::after {
-  content: '';
-  background: #1c2644;
-  position: absolute;
-  left: -2.5%;
-  top: 0;
-  width: 105%;
-  height: 100%;
-  z-index: -1;
-}
-
-#modal_btn::before {
-  content: '';
-  background: #1c2644;
-  position: absolute;
-  left: 0;
-  top: -5%;
-  width: 100%;
-  height: 113%;
-  z-index: -1;
 }
 
 /* 모달 윈도우 디자인 */
