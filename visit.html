@@ -149,234 +149,67 @@
 
     </div>
 
-    <!-- 방명록 페이지를 만들어주세요! -->
+    <!-- 방명록 제출 영역역 -->
     <div class="visitOuterContainer">
         <div class="visitInputContainer">
-            <!-- pixel painter container -->
+            <!-- <div class="blank"></div> -->
+            <!-- pixel canvas container -->
             <div class="canvas">
                 <h2>픽셀 캔버스</h2>
-                <table class="pixelCanvas">
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
+                <div class="pixelTable">
+                    <table class="pixelCanvas"></table>
+                </div>
             </div>
             <div class="control">
                 <h2>다시 그리기</h2>
                 <button class="mode paint" id="clearCanvas">Clear</button>
                 <h2>색 선택</h2>
-                <input type="color" class="mode paint" id="colorPicker" value="#008000" title="Set PAINT color">
+                <input type="color" class="mode paint" id="colorPicker" value="#008000">
                 <h2>현재 상태 </h2><span class="paintOrErase"> PAINT</span>
                 <div id="mode">
-                    <button id="paintBtn" class="mode paint" title="Set mode to PAINT" type="button">
+                    <button class="mode paint" type="button">
                         Paint
                     </button>
-                    <button id="eraseBtn" class="mode erase" title="Set mode to ERASE" type="button">
+                    <button class="mode erase" type="button">
                         Erase
                     </button>
-                </div> 
-            </div>
-            <!-- visit log container -->
-            <div class="visitLog">
-                <h2>그린 사람</h2>
-                <div class="visitName">
-                    <input type="text">
                 </div>
-                <div class="visitComment">
-                    <textarea name="visitComment" id="visitComment"></textarea>
+                <!-- visit log container -->
+                <div class="visitLog">
+                    <h2>그린 사람</h2>
+                    <div class="visitName">
+                        <input type="text" id="visitName">
+                    </div>
+                    <div class="visitComment">
+                        <textarea name="visitComment" id="visitComment"></textarea>
+                    </div>
+                    <button type="submit" id="visitSubmit">내 트리 자랑하기</button>
                 </div>
-                <button type="submit">내 트리 자랑하기</button>
             </div>
         </div>
     </div>
 
     <!-- visit log list -->
     <div class="visitCardList">
-        <div class="row row-cols-3 row-cols-md-3">
-            <div class="col">
-                <div class="visitCard h-100">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2162&q=80"
-                        class="card-img-top" alt="...">
+        <div class="row">
+            <div class="col-3">
+                <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">하와이안 피자</h4>
-                        <p class="card-text">이건 꼭 먹어봐야 해요</p>
-                        <p>⭐⭐⭐⭐</p>
-                        <button class="card-button">주문하기</button>
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="visitCard h-100">
-                    <img src="https://images.unsplash.com/photo-1481070555726-e2fe8357725c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2235&q=80"
-                        class="card-img-top" alt="...">
+            <div class="col-3">
+                <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">크리스피 버거</h4>
-                        <p class="card-text">너무 달콤해요!</p>
-                        <p>⭐⭐⭐</p>
-                        <button class="card-button">주문하기</button>
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="visitCard h-100">
-                    <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">해물 라면</h4>
-                        <p class="card-text">국물이 끝내줘요!</p>
-                        <p>⭐⭐⭐⭐⭐</p>
-                        <button class="card-button">주문하기</button>
-                    </div>
-                </div>
-            </div>
-            
         </div>
     </div>
 
