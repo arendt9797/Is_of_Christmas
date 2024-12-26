@@ -86,12 +86,13 @@ body {
     color: #e3e3e3;
 }
 
-.jingleBell {
+/* 페이지 배경음악 */
+#jingleBell {
     width: 35px;
     height: 40px;
-    position: absolute;
-    top: 100px;
-    right: 350px;
+    position: fixed;
+    top: 20px;
+    right: 700px;
     background-color: transparent;
     background-image: url('../source/bell.png');
     /* background-position: center; */
@@ -101,6 +102,8 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+
+
 
 
 /* 눈 포지션 */

@@ -8,7 +8,7 @@
     <link rel="icon" href="./source/santa.png" />
     <link rel="stylesheet" href="./css/index.css">
 </head>
-<script src="./js/index.js"></script>
+
 <body>
     <div class="snow_wrap">
         <div class="snow_div"><p>❅</p></div>
@@ -49,10 +49,11 @@
         <div class="snow_div"><p>❅</p></div>
     </div> 
     
-    <div> <button type="button" class="jingleBell" onclick="start_Bgm()"> </button> </div>
-    <audio id="christmasBgm">
-        <source src="./source/mainBgm.mp3" type="audio/mp3">
+    <!-- 페이지 배경음악 -->
+    <button id="jingleBell"> </button>
+    <audio id="christmasBgm" src="./source/mainBgm.mp3">
     </audio>
+
 
     <div class="container">
         <h1 id="main-title">
@@ -79,4 +80,5 @@
         
     </div>
 </body>
+<script src="./js/index.js"></script>
 </html>
