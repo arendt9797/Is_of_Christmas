@@ -1,3 +1,4 @@
+/* 그림판 및 인풋 컨테이너너 */
 .visitOuterContainer {
     display: flex;
     justify-content: center;
@@ -19,9 +20,19 @@ h2 {
 .visitInputContainer {
     display: grid;
     grid-template-areas:
-        'canvas control';
-    grid-template-columns: 600px 600px;
+        'blank1 canvas control blank2';
+    grid-template-columns: 200px 400px 400px 200px;
     grid-template-rows: auto;
+    padding-top: 12px;
+}
+
+.blank1 {
+    grid-area: blank1;
+    height: 500px;
+}
+.blank1 {
+    grid-area: blank2;
+    height: 500px;
 }
 
 .control {
@@ -55,27 +66,123 @@ td {
     width: 20px;
 }
 
-.card-body tr {
-    height: 8px;
+/* ------------ 그림판 설정 -------------- */
+#colorPicker {
+    border-radius: 20% 5%;
+    width: 300px;
+    height: 56px;
+    border-color: aliceblue;
+    border-width: thick;
+    margin: 40px 0 25px;
+    cursor: pointer;
 }
 
-.card-body td {
-    width: 8px;
+.control-menu > .mode {
+    font-family: "Dongle", serif;
+    font-size: xx-large;
+    color: aliceblue;
+    background-color: #dd5a5a;
+    border: 3px, solid, aliceblue;
+    border-radius: 5px;
+}
+
+#paint, #erase {
+    padding-right: 10px;
+}
+
+#clearCanvas {
+    margin-left: 12px;
+}
+
+#clearCanvas:active {
+    border: 3px, solid, rgb(70, 169, 255);
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+.control-menu {
+    width: 400px;
+}
+
+.visitLog {
+    margin-top: 42px;
+}
+
+#visitName, #visitComment {
+    font-family: "Dongle", serif;
+    font-size: x-large;
+    width: 300px;
+    padding: 0 10px;
+    border: 3px solid #dd5a5a;
+}
+
+#visitName, #visitComment:focus {
+    outline: none;
+}
+
+#visitName {
+    height: 50px;
+}
+
+#visitComment {
+    height: 150px;
+}
+
+#visitSubmit {
+    width: 250px;
+    height: 50px;
+    font-size: x-large;
+    color: aliceblue;
+    background-color: #dd5a5a;
+    border: 3px, solid, aliceblue;
+    border-radius: 5px;;
+    margin-top: 24px;
+}
+
+#visitSubmit:active {
+    border: 3px, solid, rgb(70, 169, 255);
 }
 
 /* ------------ 방명록 리스트 ------------ */
 .visitCardList {
-    width: 1200px;
+    width: 1300px;
     margin: 30px auto;
 }
 
+.card-body tr {
+    height: 10px;
+}
+
+.card-body td {
+    width: 10px;
+}
+
+.card {
+    align-items: center;
+    margin-bottom: 24px;
+    background-color: #dd5a5a;
+}
+
+.card-header {
+    background-color: transparent;
+    border: 0;
+    color: aliceblue;
+}
+
 .card-body {
-    width: 150px;
-    height: 300px;
+    width: 200px;
+    height: 400px;
+    padding: 0;
+    color: aliceblue;
 }
 
 .card-canvas {
-    padding-left: 0;
-    padding-right: 24px;
-    padding-top: 42px;
+    padding-bottom: 24px;
+}
+
+.card-text {
+    padding: 0 24px;
 }

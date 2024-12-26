@@ -152,61 +152,60 @@
     <!-- 방명록 제출 영역역 -->
     <div class="visitOuterContainer">
         <div class="visitInputContainer">
-            <!-- <div class="blank"></div> -->
+            <div class="blank1"></div>
             <!-- pixel canvas container -->
             <div class="canvas">
-                <h2>픽셀 캔버스</h2>
+                <h2>🎄나만의 트리 그리기🎄</h2>
                 <div class="pixelTable">
                     <table class="pixelCanvas"></table>
                 </div>
             </div>
             <div class="control">
-                <h2>다시 그리기</h2>
-                <button class="mode paint" id="clearCanvas">Clear</button>
-                <h2>색 선택</h2>
                 <input type="color" class="mode paint" id="colorPicker" value="#008000">
-                <h2>현재 상태 </h2><span class="paintOrErase"> PAINT</span>
-                <div id="mode">
-                    <button class="mode paint" type="button">
-                        Paint
+                <div class="control-menu" id="mode">
+                    <button class="mode paint" id="paint" type="button">
+                        <img src="./source/pencil.png" alt="paint" class="icon">
+                        그리기
                     </button>
-                    <button class="mode erase" type="button">
-                        Erase
+                    <button class="mode erase" id="erase" type="button">
+                        <img src="./source/erasor.png" alt="erase" class="icon">
+                        지우기
+                    </button>
+                    <button class="mode paint" id="clearCanvas">
+                        <img src="./source/bin.png" alt="erase" class="icon bin">
                     </button>
                 </div>
+
+
                 <!-- visit log container -->
                 <div class="visitLog">
-                    <h2>그린 사람</h2>
+                    <h2>코멘트를 남겨주세요!
+                    </h2>
+                    <form action=""></form>
                     <div class="visitName">
-                        <input type="text" id="visitName">
+                        <input type="text" id="visitName" placeholder="이름을 적어주세요" required>
                     </div>
                     <div class="visitComment">
-                        <textarea name="visitComment" id="visitComment"></textarea>
+                        <textarea name="visitComment" id="visitComment" placeholder="인사를 나눠주세요" required></textarea>
                     </div>
                     <button type="submit" id="visitSubmit">내 트리 자랑하기</button>
                 </div>
             </div>
+            <div class="blank2"></div>
         </div>
     </div>
 
     <!-- visit log list -->
     <div class="visitCardList">
-        <div class="row">
-            <div class="col-3">
+        <div class="row" id="visitCard">
+            <div class="col-2">
                 <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="card-header">
+                        <h3>Name</h3>
                     </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
+                        <div class="card-canvas"></div>
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
