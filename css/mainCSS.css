@@ -131,6 +131,7 @@ main {
 
 #message span:hover {
   top: 5px;
+  font-size: xx-large;
   font-weight: bold;
   cursor: pointer;
 }
