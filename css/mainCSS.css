@@ -5,6 +5,23 @@
   font-style: normal;
 }
 
+@keyframes move{
+  0% {
+    transform : rotate(5deg) translateX(15px); /* 애니메이션이 0%만큼 동작시 */
+  }
+  25% {
+    transform : rotate(odeg) translateX(0px); /* 애니메이션이 25%만큼 동작시 */
+  }
+
+  50% {
+    transform : rotate(-5deg) translateX(-15px); /* 애니메이션이 50%만큼 동작시 */
+  }
+
+  100% {
+    transform : rotate(0deg) translateX(0px); /* 애니메이션이 100%만큼 동작시 */
+  }
+}
+
 
 main {
   width: 1200px;
@@ -12,9 +29,10 @@ main {
   margin-left: auto;
   margin-right: auto;
   padding-top: 40px;
-  background-color: rgba(255, 0, 0, 0.379);
+  background-image: url('../source/main_background.png');
+  background-position: center;
+  background-size: cover;
 
-  border-radius: 5px;
 }
 
 #front {
@@ -29,20 +47,21 @@ main {
   height: 600px;
   text-align: center;
 
+
   transition-duration: 2.5s;
   transition-timing-function: ease;
   transform-origin: 0;
-
-  border: none;
-  box-shadow:
-    inset -4px 2px 1px 1px grey,
-    inset -4px -2px 1px 1px lightgray,
-    inset 4px 0px 1px 1px lightgray;
+  
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
+}
+
+#front:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .openCard {
@@ -55,19 +74,14 @@ main {
   font-size: 40pt;
   text-align: center;
   padding: 70px 40px 70px 40px;
-  box-shadow:
-    inset -4px 2px 1px 1px grey,
-    inset -4px -2px 1px 1px lightgray,
-    inset 4px 0px 1px 1px lightgray;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
 }
 
-
-#frontPic {
-  width: 200px;
-  height: 200px;
-  margin: 40px 40px 30px 40px;
-  border-radius: 40%;
+#frontTitle:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
+
 
 #inside {
   z-index: 0;
@@ -76,13 +90,6 @@ main {
   width: 600px;
   height: 600px;
   text-align: center;
-
-  border: none;
-  /* border-radius: 10px; */
-  box-shadow:
-    inset -4px 2px 1px 1px grey,
-    inset -4px -2px 1px 1px lightgray,
-    inset 4px 0px 1px 1px lightgray;
 
   /* 안쪽 카드 위치고정 */
   margin-left: auto;
@@ -95,24 +102,37 @@ main {
   color: #000;
   font-size: 18pt;
   text-align: left;
-  padding: 20px 0px 20px 30px;
+  padding: 15px 0px 10px 30px;
 }
 
 #insideTo span {
   font-size: 14pt;
 }
 
-#insidePic {
-  width: 200px;
-  height: auto;
-  margin-bottom: 9px;
+#msgdiv {
+  border-radius: 5px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #message {
   color: #000;
-  font-size: 14pt;
+  font-size: 20pt;
   text-align: center;
-  font-family: 'DungGeunMo';
+  font-family: "Dongle", serif;
+  margin: 10px 0 10px 0;
+
+}
+
+#message span {
+  font-family: "Dongle", serif;
+}
+
+#message span:hover {
+  top: 5px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 #insideFrom {
@@ -180,12 +200,13 @@ main {
 
   position: relative;
 
-  background-image: url('https://img.freepik.com/premium-vector/pixel-art-christmas-birthday-gift-red-gold-box-bit-game-item-white-background_360488-5.jpg?w=996');
+  background-image: url('../source/snata_gift.png');
   background-position: center;
   background-size: cover;
 
   border: none;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .close_btn:hover {
@@ -194,30 +215,14 @@ main {
   top: 5px;
 }
 
-@keyframes move{
-  0% {
-    transform : rotate(5deg) translateX(15px); /* 애니메이션이 0%만큼 동작시 */
-  }
-  25% {
-    transform : rotate(odeg) translateX(0px); /* 애니메이션이 50%만큼 동작시 */
-  }
-
-  25% {
-    transform : rotate(-5deg) translateX(-15px); /* 애니메이션이 50%만큼 동작시 */
-  }
-
-  100% {
-    transform : rotate(0deg) translateX(0px); /* 애니메이션이 100%만큼 동작시 */
-  }
-}
 
 .close_btn:focus {
-  background-image: url('../source/close_btn_hover_temporary.png');
-  background-position: bottom right;
-  background-size: 200%;
+  background-image: url('../source/close_btn_focus.jpeg');
+  background-position: center;
+  background-size: 140%;
   opacity: 1;
   animation: move 0.2s;
-  animation-iteration-count : 6;
+  animation-iteration-count : 5;
 }
 
 /* 모달시작 */
@@ -228,9 +233,9 @@ main {
   margin: 0;
   padding: 10px;
 
-  font-size: 14pt;
+  font-size: 20pt;
   text-align: center;
-  font-family: 'DungGeunMo';
+  font-family: "Dongle", serif;
 
   vertical-align: middle;
   cursor: pointer;
@@ -249,7 +254,7 @@ main {
 
   /* top:50%;
     left:50%;   */
-  margin-top: -480px;
+  margin-top: -490px;
   margin-left: 25px;
 
   box-shadow:
@@ -259,7 +264,7 @@ main {
 
   overflow: hidden;
 
-  background-image: url('https://img.freepik.com/free-vector/flat-design-pixel-art-christmas_23-2149729093.jpg?uid=R180403422&ga=GA1.1.733110861.1734924592&semt=ais_hybrid');
+  background-image: url('../source/main_modal.avif');
   background-position: center;
   background-size: cover;
 
@@ -276,7 +281,8 @@ main {
 
 #modal_text {
   color: white;
-  font-size: 1.4em;
+  font-family: "Dongle", serif;
+  font-size: 1.6em;
   margin-top: 20px;
 }
 
@@ -312,6 +318,7 @@ main {
   font-size: 16x;
   cursor: pointer;
 }
+
 
 
 /* 모달 윈도우가 팝업되는 코어 소스 */
