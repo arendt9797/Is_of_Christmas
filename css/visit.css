@@ -1,0 +1,81 @@
+.visitOuterContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visitInputContainer {
+    background-color: #30384e;
+    width: 1200px;
+    height: 600px;
+    margin-bottom: 50px;
+}
+
+/* --------- 픽셀 그림판 ----------- */
+h2 {
+    color: aliceblue;
+}
+
+.visitInputContainer {
+    display: grid;
+    grid-template-areas:
+        'canvas control';
+    grid-template-columns: 600px 600px;
+    grid-template-rows: auto;
+}
+
+.control {
+    grid-area: control;
+    height: 500px;
+}
+
+.canvas {
+    grid-area: canvas;
+    height: 500px;
+}
+
+table,
+tr,
+td {
+    border: 1px solid rgb(201, 201, 201);
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: white;
+    margin: 0 auto;
+}
+
+tr {
+    height: 20px;
+}
+
+td {
+    width: 20px;
+}
+
+.card-body tr {
+    height: 8px;
+}
+
+.card-body td {
+    width: 8px;
+}
+
+/* ------------ 방명록 리스트 ------------ */
+.visitCardList {
+    width: 1200px;
+    margin: 30px auto;
+}
+
+.card-body {
+    width: 150px;
+    height: 300px;
+}
+
+.card-canvas {
+    padding-left: 0;
+    padding-right: 24px;
+    padding-top: 42px;
+}
