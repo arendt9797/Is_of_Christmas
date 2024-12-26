@@ -12,58 +12,112 @@
       href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Dongle&family=Noto+Sans+KR:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    
   </head>
   <body>
     <!-- 멤버 소개 페이지를 만들어주세요! -->
     <div class="mem_container">
       <div class="mem_treebox">
         <div class="mem_tree">
-          <div class="mem_on mem_1">1</div>
-          <div class="mem_on mem_2">2</div>
-          <div class="mem_on mem_3">3</div>
-          <div class="mem_on mem_4">4</div>
-          <div class="mem_on mem_5">5</div>
+          <div class="mem_on mem_1">이기리</div>
+          <div class="mem_on mem_2">김우경</div>
+          <div class="mem_on mem_3">최수진</div>
+          <div class="mem_on mem_4">유익환</div>
+          <div class="mem_on mem_5">방은혜</div>
+          <audio
+            id="clickSound"
+            src="source/mem_on_bell.wav"
+            type="audio"
+          ></audio>
         </div>
       </div>
-      <div class="mem_cardbox">
-        <div class="mem_profile">
-          <div class="mem_left">
-            <div class="mem_choiced">선택된 멤버 얼굴</div>
-            <div class="mem_infolist">
-              <div class="mem_name mem_info">
-                <p class="font_dongle">이름</p>
-              </div>
-              <div class="mem_mbti mem_info">
-                <p class="font_dongle">mbti</p>
-              </div>
-              <div class="mem_bloglink mem_info">
-                <p class="font_dongle">블로그로 이동</p>
-              </div>
-            </div>
+      <div class="mem_modal">
+        <div class="mem_cardbox">
+          <div class="mem_btn">
+            <div class="modal_close_btn">닫기</div>
           </div>
-          <div class="mem_right">
-            <div class="mem_ment">
-                <p class="font_dongle">여러분과 함께 돈 벌고 싶습니다!</p>
-            </div>
-            <div class="mem_schedule">
-                <p class="schedulement">Christmas Schedule</p>
-                <div>
-                    <p class="font_dongle">스케쥴을 작성합니다. 이렇게 길게 쓸까요 짦게 슬까요
-                        어케 쓸까요
-                    </p>
+          <div class="mem_profile">
+            <div class="mem_left">
+              <div class="mem_choiced">선택된 멤버 얼굴</div>
+              <div class="mem_infolist">
+                <div class="mem_name mem_info">
+                  <p>이름</p>
                 </div>
-                
+                <div class="mem_mbti mem_info">
+                  <p>mbti</p>
+                </div>
+                <div class="mem_bloglink mem_info">
+                  <p><a href="">블로그로 이동</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="mem_right">
+              <div class="mem_ment">
+                <p class="font_dongle mem_pfl_ment">
+                  여러분과 함께 돈 벌고 싶습니다!
+                </p>
+              </div>
+              <div class="mem_schedule">
+                <p class="schedulement">Christmas Schedule</p>
+                <div class="mem_sch_full">
+                  <div class="mem_sch_half">
+                    <p class="font_dongle scheduletext">
+                      10:00 늦잠자고 일어나기!
+                    </p>
+                    <p>12:00 친구랑 크리스마스 만찬</p>
+                  </div>
+                  <div class="mem_sch_half">
+                    <p class="font_dongle scheduletext">
+                      14:00 우아한 공주들의 티타임
+                    </p>
+                    <p>16:00 으아한 공주들의 쏘맥타임</p>
+                    <p>19:00 으악한 공주들 집에 갈 시간</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="mem_facelist">
-          <div class="mem_face mem_1"></div>
-          <div class="mem_face mem_2"></div>
-          <div class="mem_face mem_3"></div>
-          <div class="mem_face mem_4"></div>
-          <div class="mem_face mem_5"></div>
+          <div class="mem_facelist">
+            <div class="mem_face mem_1"><a href=""></a></div>
+            <div class="mem_face mem_2"><a href=""></a></div>
+            <div class="mem_face mem_3"><a href=""></a></div>
+            <div class="mem_face mem_4"><a href=""></a></div>
+            <div class="mem_face mem_5"><a href=""></a></div>
+          </div>
         </div>
       </div>
     </div>
+
+    <script>
+      //tree에 있는 멤버를 클릭 시 소리가 나도록 함
+      // 모든 .soundDiv 요소 선택
+      const divs = document.querySelectorAll(".mem_on");
+      // 각 div에 클릭 이벤트 추가
+      divs.forEach((div) => {
+        div.addEventListener("click", function () {
+          const sound = document.getElementById("clickSound");
+          sound.currentTime = 0; // 재생 위치 초기화
+          sound.play(); // 재생
+        });
+      });
+
+      const modal = document.querySelector('.mem_modal');
+      let test = document.querySelector('.mem_4')
+      // divs.forEach((div) => {
+      //   divs.addEventListener("click", () => {
+      //     modal.style.display = "block";
+      //   });
+      // });
+      
+      test.addEventListener("click", () => {
+          modal.style.display = "block";
+        });
+      const close_btn = document.querySelector('.modal_close_btn');
+
+      close_btn.addEventListener("click", ()=>{
+        modal.style.display = "none";
+      })
+        
+    </script>
   </body>
 </html>
