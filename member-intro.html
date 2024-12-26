@@ -12,9 +12,71 @@
       href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Dongle&family=Noto+Sans+KR:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    
+    <link rel="icon" href="./source/santa.png" />
   </head>
+  <script src="./js/index.js"></script>
   <body>
+    <div class="snow_wrap">
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+      <div class="snow_div"><p>❅</p></div>
+    </div>
+
+    <div class="container">
+      <h1 id="main-title">
+        <span class="christmas">크리스마스의 </span>
+        <span class="i">'I'</span>
+        <span class="others"> 들</span>
+      </h1>
+      <div class="menu">
+        <a href="#" class="link">
+          <img src="source/santa.png" alt="팀 소개 이미지" />
+          <span>팀 소개</span>
+        </a>
+        <a href="#" class="link">
+          <img src="source/ornament.png" alt="프로필 이미지" />
+          <span>프로필</span>
+        </a>
+        <a href="#" class="link">
+          <img src="source/ring.png" alt="방명록 이미지" />
+          <span>방명록</span>
+        </a>
+      </div>
+    </div>
+
     <!-- 멤버 소개 페이지를 만들어주세요! -->
     <div class="mem_container">
       <div class="mem_treebox">
@@ -34,7 +96,7 @@
       <div class="mem_modal">
         <div class="mem_cardbox">
           <div class="mem_btn">
-            <div class="modal_close_btn">닫기</div>
+            <!-- <div class="modal_close_btn">닫기</div> -->
           </div>
           <div class="mem_profile">
             <div class="mem_left">
@@ -53,8 +115,10 @@
             </div>
             <div class="mem_right">
               <div class="mem_ment">
-                <p class="font_dongle mem_pfl_ment">
-                  여러분과 함께 돈 벌고 싶습니다!
+                <p>
+                  <span class="font_dongle">
+                    여러분과 함께 돈 벌고 싶습니다!
+                    </span>
                 </p>
               </div>
               <div class="mem_schedule">
@@ -62,9 +126,9 @@
                 <div class="mem_sch_full">
                   <div class="mem_sch_half">
                     <p class="font_dongle scheduletext">
-                      10:00 늦잠자고 일어나기!
+                      10:00 공주 기상
                     </p>
-                    <p>12:00 친구랑 크리스마스 만찬</p>
+                    <p>12:00 공주 크리스마스 만찬</p>
                   </div>
                   <div class="mem_sch_half">
                     <p class="font_dongle scheduletext">
@@ -101,23 +165,39 @@
         });
       });
 
-      const modal = document.querySelector('.mem_modal');
-      let test = document.querySelector('.mem_4')
-      // divs.forEach((div) => {
-      //   divs.addEventListener("click", () => {
-      //     modal.style.display = "block";
-      //   });
-      // });
-      
-      test.addEventListener("click", () => {
-          modal.style.display = "block";
-        });
-      const close_btn = document.querySelector('.modal_close_btn');
+      const modal = document.querySelector(".mem_modal");
+      let test = document.querySelector(".mem_4");
+      // 모달 열기
+      function openModal() {
+            modal.style.display = "block";
+      }
+      // 모달 닫기
+      function closeModal() {
+          modal.style.display = "none";
+      }
 
-      close_btn.addEventListener("click", ()=>{
-        modal.style.display = "none";
-      })
-        
+      test.addEventListener("click", () => {
+        openModal();
+      });
+
+      //모달 바깥 영역을 클릭하면 화면이 닫히게 함
+      modal.addEventListener("click", (e) => {
+        if (e.target === document.querySelector(".mem_modal")) {
+          closeModal();
+        }
+      });
+
+      // 각 멤버이름에 속성 추가
+      // 각 div에 추가할 이름 배열
+      const names = ["이기리", "김우경", "최수진", "유익환", "방은혜"];
+
+      // 모든 .member div 요소를 선택
+      const members = document.querySelectorAll(".mem_face");
+
+      // 각 div에 이름을 동적으로 추가
+      members.forEach((member, index) => {
+          member.setAttribute("data-name", names[index]); // data-name 속성 설정
+      });
     </script>
   </body>
 </html>

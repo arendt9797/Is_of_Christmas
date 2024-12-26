@@ -1,3 +1,5 @@
+
+
 /* 멤버페이지 트리 레이아웃 */
 .font_dongle{
     font-family: "Dongle", serif;
@@ -15,6 +17,7 @@
     padding: 20px 100px;
     align-items: center;
     box-sizing: border-box;
+    background-color: rgba(225, 225, 225, 0.2);
 }
 
 .mem_tree{
@@ -43,7 +46,7 @@
 .mem_1{
     right: 200px;
     top: 140px;
-    background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQiR04wvACTBPy9fHu7ctbfIUjuCoo54TDJFRrWdAjOwgg54E-7eTF5Da8z-z3-Ck94ZlL6in6sy6luRDaDq4Ir9mEjdSQKIvkLnNDShKn7NEeJZw2EgncTpwcZ9cFCwp5hPwJIoekngpPT3hn-5KeE5pCUYugK-ILHTWsd2L0HDU9EEdajSkYQJcTOk0/s1600/profile_mem_1.png);
+    background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh55MM6IuOEnilzg9AUtNzHV8BVU8cjPu1gxjcS77Xcsh5-ziQva7hV4rbdIFNDELKf4yzf-ezt72gJEB8ckuJzzgWVnH04e7WKYlbQ0LAfFLZ52gBBxR4AYsE1sfb5hIDqiIrco7z3y-vUr0r34ct11bBgxiR7Ado47dnnvizHoERkmGMSUsa2Tkb9xqk/s1600/profile_mem_1.png);
     background-size: cover;
     background-position: center;
 }
@@ -79,8 +82,8 @@
 /* 멤버 상세 프로필 카드 css */
 
 .mem_cardbox {
-    width: 1000px;
-    height: 700px;
+    width: 900px;
+    height: 600px;
     margin: 0 auto;
     padding: 90px 56px;
     background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXUHUhwO-iABwAUCBTqvRtSGeINWQX0vQk4SynXVaIutz0aR_VyPakpqK40VqgrWmfIJcfdUaouqIfas2EvbIE_7Ca05Ep1a-1o3nqdkWC9z53CdiYP8QyM06AIhDEXicIctJM9vbSLba9PYRl3u9JEiNZ19E2QuMfms-tPh7OxT-DgeJ7ae7MERHD4nM/s320/box_profile.png); 
@@ -97,7 +100,7 @@
 
 .mem_profile{
     width: 900px;
-    height: 450px;
+    height: 420px;
     display: flex;
     justify-content: space-between;
 
@@ -108,7 +111,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0;
+    padding-bottom: 10px;
 }
 .mem_infolist{
     height: 220px;
@@ -133,6 +136,12 @@
     font-size: 30px;
     line-height: 0;
 }
+
+.mem_profile p span {
+    font-size: 48px;
+    line-height: 1;
+}
+
 .mem_info a {
     text-decoration: none;
 }
@@ -152,7 +161,7 @@
 }
 .mem_schedule{
     width: 600px;
-    height: 300px;
+    height: 270px;
     background-color: #fc4050;
     border: 4px solid black;
     border-radius: 6px;
@@ -201,7 +210,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 900px;
+    width: 840px;
     position: relative;
 }
 
@@ -210,7 +219,7 @@
     height: 140px;
 }
 .mem_face:hover::after{
-    content: "멤버이름";
+    content: attr(data-name); /* JavaScript에서 설정한 data-name 속성을 표시 */
     color: white;
     line-height: 140px;
     font-size: 2rem;
@@ -232,17 +241,18 @@
 
 /* 모달창 동작 관련 css */
 .mem_modal{
-    position: absolute;
+    position: fixed;
     display:none;
-    transition: all 1s;
-    top: 0;
-    left: 0;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     justify-content: center;
 
-    width: 100%;
-    height: auto;
+    width: 100vmax;
+    height: 100vh;
 
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 .mem_btn {
     width: 100%;
