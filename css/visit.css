@@ -7,16 +7,20 @@
 .visitInputContainer {
     background-color: #30384e;
     width: 1200px;
-    height: 500px;
+    height: 600px;
     margin-bottom: 50px;
 }
 
 /* --------- 픽셀 그림판 ----------- */
+h2 {
+    color: aliceblue;
+}
+
 .visitInputContainer {
     display: grid;
     grid-template-areas:
-        'canvas control log';
-    grid-template-columns: 400px 400px 400px;
+        'canvas control';
+    grid-template-columns: 600px 600px;
     grid-template-rows: auto;
 }
 
@@ -30,15 +34,10 @@
     height: 500px;
 }
 
-.visitLog {
-    grid-area: log;
-    height: 500px;
-}
-
 table,
 tr,
 td {
-    border: 1px solid black;
+    border: 1px solid rgb(201, 201, 201);
     cursor: pointer;
 }
 
@@ -56,75 +55,27 @@ td {
     width: 20px;
 }
 
-/* 방명록 리스트트 */
+.card-body tr {
+    height: 8px;
+}
+
+.card-body td {
+    width: 8px;
+}
+
+/* ------------ 방명록 리스트 ------------ */
 .visitCardList {
     width: 1200px;
     margin: 30px auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.visitCard {
-    border-radius: 30px;
-    background-color: white;
-    border: none;
-    color: black;
-    margin-left: 50px;
-}
-.card-img-top {
-    object-fit: cover;
-    height: 250px;
-    border-radius: 20px;
-}
-
-.card-title {
-    margin-top: 10px;
-    font-size: 18px;
 }
 
 .card-body {
-    border: blanchedalmond 2px solid;
-    border-radius: 20px;
+    width: 150px;
+    height: 300px;
 }
 
-.card-text {
-    color: black;
-}
-
-.comment {
-    color: black;
-}
-
-.play-button {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 15px;
-}
-
-a.nav-link {
-    color: #F17228;
-    font-size: large;
-}
-
-.icon {
-    height: 50px;
-}
-
-.card-button {
-    background-color: orange;
-    color: white;
-    text-align: center;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.card-title {
-    font-weight: bold;
-}
-
-.card-button> :hover {
-    background-color: darkorange;
+.card-canvas {
+    padding-left: 0;
+    padding-right: 24px;
+    padding-top: 42px;
 }
