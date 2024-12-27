@@ -1,4 +1,5 @@
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +12,7 @@
 </head>
 
 <body>
-   
+
   <div class="snow_wrap">
     <div class="snow_div">
       <p>❅</p>
@@ -127,28 +128,28 @@
 
   <div class="container">
     <h1 id="main-title">
-        <a href="main.html">
+      <a href="main.html">
         <span class="christmas">크리스마스의 </span>
         <span class="i">'I'</span>
         <span class="others"> 들</span>
-    </a>
+      </a>
     </h1>
     <div class="menu">
-        <a href="team-intro.html" class="link">
-            <img src="source/santa.png" alt="팀 소개 이미지">
-            <span>팀 소개</span> 
-        </a>
-        <a href="member-intro.html" class="link">
-            <img src="source/ornament.png" alt="프로필 이미지">
-            <span>프로필</span> 
-        </a>
-        <a href="visit.html" class="link">
-            <img src="source/ring.png" alt="방명록 이미지">
-            <span>방명록</span> 
-        </a>
+      <a href="team-intro.html" class="link">
+        <img src="source/santa.png" alt="팀 소개 이미지">
+        <span>팀 소개</span>
+      </a>
+      <a href="member-intro.html" class="link">
+        <img src="source/ornament.png" alt="프로필 이미지">
+        <span>프로필</span>
+      </a>
+      <a href="visit.html" class="link">
+        <img src="source/ring.png" alt="방명록 이미지">
+        <span>방명록</span>
+      </a>
     </div>
-    
-</div>
+
+  </div>
 
 
 
@@ -175,7 +176,7 @@
       <div> <button class="close_btn" onclick="close_card()"> </button> </div>
 
       <div id="msgdiv">
-        <p id="message"> 방금 <span>"딸랑딸랑"</span> 루돌프 종소리 들었어? </p> 
+        <p id="message"> 방금 <span>"딸랑딸랑"</span> 루돌프 종소리 들었어? </p>
 
         <!-- 모달창 테스트 -->
         <label for="modal" id="modal_btn"> X-mas! 루돌프가 가져온 선물을 열어봐~</label>
@@ -184,23 +185,25 @@
       <input type="checkbox" id="modal" class="hidden">
       <div class="box_modal">
         <label for="modal" class="closer">x</label>
-        <div id="modal_text"> 우리는 크리스마스 'I'들! <br>
-          방문 하신 모든 분을 환영합니다~!!</div>
+        <div id="modal_text">
+          <br><em> 크리스마스 "I"들이 여러분을 초대합니다!! </em> <br> <br>
+          안녕하세요. 우리는 크리스마스에 모이게 된 <br> 크리스마스 "I"들 입니다. <br> <br>
+          일정: 12월 25일 <br>
+          장소: 크리스마스 "I"들 소개페이지<br>
+          진행 방법 : 프로젝트 구현하기까지 팀원들의 <br>피땀어린 고생한 결과물을 둘러보시고, <br>아낌없는 격려와 조언을 꼭!! 방문록에 남겨주세요 :)
+
+        </div>
       </div>
-
-
       <p id="insideFrom"> From, 크리스마스 I들</p>
-    </div>
-
-    <!-- 카드오픈시 들리는 루돌프 종소리 -->
-    <audio id="rudolphAudio">
-      <source src="./source/Rudolph_bell.wav" type="audio/mp3">
-    </audio>
+      <!-- 카드오픈시 들리는 루돌프 종소리 -->
+      <audio id="rudolphAudio">
+        <source src="./source/Rudolph_bell.wav" type="audio/mp3">
+      </audio>
 
 
-    <audio id="santaAudio">
-      <source src="./source/sound-effect-christmas-santa-ho-ho-homp3.mp3" type="audio/mp3">
-    </audio>
+      <audio id="santaAudio">
+        <source src="./source/sound-effect-christmas-santa-ho-ho-homp3.mp3" type="audio/mp3">
+      </audio>
 
   </main>
 

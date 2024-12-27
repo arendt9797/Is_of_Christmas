@@ -5,20 +5,25 @@
   font-style: normal;
 }
 
-@keyframes move{
+@keyframes move {
   0% {
-    transform : rotate(5deg) translateX(15px); /* 애니메이션이 0%만큼 동작시 */
+    transform: rotate(5deg) translateX(15px);
+    /* 애니메이션이 0%만큼 동작시 */
   }
+
   25% {
-    transform : rotate(odeg) translateX(0px); /* 애니메이션이 25%만큼 동작시 */
+    transform: rotate(odeg) translateX(0px);
+    /* 애니메이션이 25%만큼 동작시 */
   }
 
   50% {
-    transform : rotate(-5deg) translateX(-15px); /* 애니메이션이 50%만큼 동작시 */
+    transform: rotate(-5deg) translateX(-15px);
+    /* 애니메이션이 50%만큼 동작시 */
   }
 
   100% {
-    transform : rotate(0deg) translateX(0px); /* 애니메이션이 100%만큼 동작시 */
+    transform: rotate(0deg) translateX(0px);
+    /* 애니메이션이 100%만큼 동작시 */
   }
 }
 
@@ -51,8 +56,8 @@ main {
   transition-duration: 2.5s;
   transition-timing-function: ease;
   transform-origin: 0;
-  
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
   margin-left: auto;
   margin-right: auto;
@@ -61,11 +66,11 @@ main {
 }
 
 #front:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .openCard {
-  transform: rotateY(94deg);
+  transform: rotateY(100deg);
 }
 
 #frontTitle {
@@ -74,7 +79,7 @@ main {
   font-size: 40pt;
   text-align: center;
   padding: 70px 40px 70px 40px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 
@@ -138,7 +143,6 @@ main {
   padding: 0 40px 0 20px;
   margin-top: -50px;
 }
-
 
 .btn {
   margin-top: 18px;
@@ -218,7 +222,7 @@ main {
   background-size: 140%;
   opacity: 1;
   animation: move 0.2s;
-  animation-iteration-count : 5;
+  animation-iteration-count: 5;
 }
 
 /* 모달시작 */
@@ -273,20 +277,21 @@ main {
   -webkit-transform: scale(0, 0);
   -ms-transform: scale(0, 0);
   transform: scale(0, 0);
+
 }
 
 #modal_text {
   color: white;
   font-family: "Dongle", serif;
   font-size: 1.6em;
-  margin-top: 20px;
+
+  width: 478px;
+  height: 478px;
+  background-color: rgba(68, 61, 61, 0.714);
+  border-radius: 15px;
+  margin: 36px auto;
+
 }
-
-/* .box_modal:hover {
-    opacity: 1;
-    filter: alpha(opacity=100);
-  } */
-
 
 /* 닫기 버튼으로 사용할 라벨 */
 
@@ -314,8 +319,6 @@ main {
   font-size: 16x;
   cursor: pointer;
 }
-
-
 
 /* 모달 윈도우가 팝업되는 코어 소스 */
 input#modal[type=checkbox]:checked~.box_modal {
