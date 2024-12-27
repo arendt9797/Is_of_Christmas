@@ -20,10 +20,10 @@
 main {
     width: 1200px;
     height: 640px;
-    margin-left: auto;
-    margin-right: auto;
+ 
+    margin: 30px auto 0px auto;
     padding-top: 40px;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
