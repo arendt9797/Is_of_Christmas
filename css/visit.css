@@ -22,27 +22,23 @@ h2 {
     grid-template-areas:
         'blank1 canvas control blank2';
     grid-template-columns: 200px 400px 400px 200px;
-    grid-template-rows: auto;
+    grid-template-rows: 500px;
     padding-top: 12px;
 }
 
 .blank1 {
     grid-area: blank1;
-    height: 500px;
 }
 .blank1 {
     grid-area: blank2;
-    height: 500px;
 }
 
 .control {
     grid-area: control;
-    height: 500px;
 }
 
 .canvas {
     grid-area: canvas;
-    height: 500px;
 }
 
 table,

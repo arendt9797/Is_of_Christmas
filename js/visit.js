@@ -1,11 +1,10 @@
 // ------------ 픽셀 그림판 ----------- //
 const PAINT = 'PAINT';
 const ERASE = 'ERASE';
-let currentMode = '';
+let currentMode = PAINT;
 let mouseIsDown = false;
 
 if (currentMode === PAINT) {
-    console.log('here')
     $('#paint').css('border', '3px solid rgb(70, 169, 255)');
     $('#erase').css('border', '3px solid aliceblue');
 }
@@ -78,21 +77,59 @@ $('.mode').on('click', function (event) {
 
 // ------------- CRUD ----------- //
 // 제출 버튼 동작
-$('#visitSubmit').on('click', function makeVisitCard() {
-    let pixelArt = $('.pixelTable').html()
+const firebaseConfig = {
+    apiKey: "AIzaSyANMkRfr7hGDihztJvlzyJFo3OoWzfoUtw",
+    authDomain: "sparta-80e89.firebaseapp.com",
+    projectId: "sparta-80e89",
+    storageBucket: "sparta-80e89.firebasestorage.app",
+    messagingSenderId: "1012738413805",
+    appId: "1:1012738413805:web:b524b290cca3eef8df68e4",
+    measurementId: "G-3Y6L6G1EHD"
+};
+
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore(app);
+
+// firebase에 데이터 추가하기
+$('#visitSubmit').click(async function () {
+    let pixelArt = $('.pixelTable').html();
     let visitName = $('#visitName').val();
     let visitComment = $('#visitComment').val();
-    let tempHtml = `
-        <div class="col-2">
-            <div class="card">
-                <div class="card-header">
-                    <h3>${visitName}</h3>
-                </div>
-                <div class="card-body">
-                    <div class="card-canvas">${pixelArt}</div>
-                    <p class="card-text">${visitComment}</p>
-                </div>
-            </div>
-        </div>`;
-    $('#visitCard').append(tempHtml);
+    try {
+        const docRef = await db.collection("visit").add({
+            'pixelArt': pixelArt,
+            'name': visitName,
+            'comment': visitComment,
+        });
+        alert('그림이 추가되었습니다!')
+        window.location.reload();
+    } catch (e) {
+        console.error("Error adding document: ", e);
+    };
 });
+
+// firebase에서 데이터 불러오기
+db.collection('visit')
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            let pixelArt = doc.data().pixelArt;
+            let visitName = doc.data().name;
+            let visitComment = doc.data().comment;
+
+            let tempHtml = `
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>${visitName}</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-canvas">${pixelArt}</div>
+                        <p class="card-text">${visitComment}</p>
+                    </div>
+                </div>
+            </div>`;
+
+            $('#visitCard').append(tempHtml);
+        })
+    });
