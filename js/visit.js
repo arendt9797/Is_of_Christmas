@@ -4,15 +4,6 @@ const ERASE = 'ERASE';
 let currentMode = PAINT;
 let mouseIsDown = false;
 
-if (currentMode === PAINT) {
-    $('#paint').css('border', '3px solid rgb(70, 169, 255)');
-    $('#erase').css('border', '3px solid aliceblue');
-}
-if (currentMode === ERASE) {
-    $('#erase').css('border', '3px solid rgb(70, 169, 255)')
-    $('#paint').css('border', '3px solid aliceblue');
-}
-
 // 빈 캔버스 생성
 const rows = 25;
 const columns = 15;
