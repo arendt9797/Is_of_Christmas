@@ -151,6 +151,9 @@
 .mem_info a:active {
     color: #fc4050;
 }
+.mem_info a:hover {
+    color: #fc4050;
+}
 
 .mem_ment{
     background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxvEksUHKRgqehHjCfdkybB81ZnIFJy9rG9IVrx8qjkYThNdpEtWzpKJC3cA0SKlVqtWrOTVbIPSS-ZY60yyTyEEYBzxBiqn7ccosL5ZrsZnvm7v1S1sO6S0EJl-9WPI7ER6ftU8lSrhTlmDKkPsWYKMJMFY8HTspN6d1rol1JqNWJ4_l-APv6hAKz_xA/s320/bubble.png);
@@ -224,7 +227,7 @@
     line-height: 140px;
     font-size: 2rem;
     -webkit-text-stroke: 2px #000;
-}
+    }
 
 .mem_face:hover{
     transform: scale(1.1);
@@ -234,9 +237,7 @@
 .mem_choiced{   
     width: 180px;
     height: 180px;
-    border: 6px solid black;
-    box-sizing: border-box;
-    border-radius: 90px;
+    color: transparent;
 }
 
 /* 모달창 동작 관련 css */
