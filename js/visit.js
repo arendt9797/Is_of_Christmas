@@ -1,8 +1,18 @@
 // ------------ 픽셀 그림판 ----------- //
 const PAINT = 'PAINT';
 const ERASE = 'ERASE';
-let currentMode = PAINT;
+let currentMode = '';
 let mouseIsDown = false;
+
+if (currentMode === PAINT) {
+    console.log('here')
+    $('#paint').css('border', '3px solid rgb(70, 169, 255)');
+    $('#erase').css('border', '3px solid aliceblue');
+}
+if (currentMode === ERASE) {
+    $('#erase').css('border', '3px solid rgb(70, 169, 255)')
+    $('#paint').css('border', '3px solid aliceblue');
+}
 
 // 빈 캔버스 생성
 const rows = 25;
@@ -56,34 +66,31 @@ $('#clearCanvas').on('click', function () {
 // Paint 와 Erase 모드 바꾸기
 $('.mode').on('click', function (event) {
     currentMode = event.target.className.includes('paint') ? PAINT : ERASE;
-    $('.paintOrErase').text(' ' + currentMode);
+    if (currentMode === PAINT) {
+        $('#paint').css('border', '3px solid rgb(70, 169, 255)');
+        $('#erase').css('border', '3px solid aliceblue');
+    }
+    if (currentMode === ERASE) {
+        $('#erase').css('border', '3px solid rgb(70, 169, 255)')
+        $('#paint').css('border', '3px solid aliceblue');
+    }
 });
 
-
 // ------------- CRUD ----------- //
-// 그림 크기 줄이기
-
-
-
 // 제출 버튼 동작
 $('#visitSubmit').on('click', function makeVisitCard() {
     let pixelArt = $('.pixelTable').html()
     let visitName = $('#visitName').val();
     let visitComment = $('#visitComment').val();
-
     let tempHtml = `
-        <div class="col card mb-3" style="max-width: 300px;">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <div class="card-body card-canvas">
-                        ${pixelArt}
-                    </div>
+        <div class="col-2">
+            <div class="card">
+                <div class="card-header">
+                    <h3>${visitName}</h3>
                 </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h4 class="card-title">${visitName}</h4>
-                        <p class="card-text">${visitComment}</p>
-                    </div>
+                <div class="card-body">
+                    <div class="card-canvas">${pixelArt}</div>
+                    <p class="card-text">${visitComment}</p>
                 </div>
             </div>
         </div>`;

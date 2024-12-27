@@ -1,12 +1,6 @@
 /* team.css 코드 선언 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 main {
-
     width: 1200px;
     height: 640px;
     margin-left: auto;
@@ -18,34 +12,28 @@ main {
     align-items: center;
 
     flex-direction: column;
-
 }
 
 #Title {
     color: white;
-    font-size: 40px;
-    margin: 10px;
+    font-size: 60px;
+    width: 1200px;
+    background-color: #A61C35;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    margin: 0px;
+    padding: 0px 40px 0px 40px;
+
+    font-weight: lighter;
 }
 
 .team_base_container {
+    width: 1200px;
     display: flex;
-    gap: 40px;
     background-color: #0c620ecb;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     padding: 40px;
-    border-radius: 4px;
+    gap: 40px;
 
-}
-
-.team_container {
-    border-radius: 4px;
-
-}
-
-.team_means {
-    width: 390px;
-    height: 540px;
-    background-image: url("../source/means.png");
-    background-color: #f9f9f9;
 }
 
 .team_hpa_container {
@@ -54,32 +42,167 @@ main {
     gap: 40px;
 }
 
-.team_purpose {
+/* _team_mean */
+.flip_team_mean {
+    margin: 1.2em;
+    width: 390px;
+    height: 580px;
 
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: #d3d3d3;
-    /* Grey */
-    background-image: url(../source/purpose.png);
+    position: relative;
+    perspective: 1100px;
+
+    top: -15px;
+    left: -5px;
+
+    transition: 1s ease-out all;
+
+
+}
+
+.flip_team_mean:hover .card {
+    transform: rotateY(180deg) scale(1.1);
+    cursor: pointer;
+}
+
+.front_team_means,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.front_team_means {
+    width: 390px;
+    height: 580px;
+
+    background-image: url("../source/means.png");
+    background-size: cover;
+    background-position: center;
+    border: 18px solid #A61C35;
+    border-radius: 10px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+/* _team_purpose */
+
+
+.flip_team_purpose {
+    margin: 1.2em;
+
     width: 672px;
     height: 327px;
+    position: relative;
+    perspective: 1100px;
+
+    top: -15px;
+    left: -5px;
+
+    transition: 1s ease-out all;
 }
 
-.team_promise {
+.flip_team_purpose:hover .card {
+    transform: rotateY(180deg) scale(1.1);
+    cursor: pointer;
+}
 
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #65b9e6;
-    /* Blue */
-    background-image: url(../source/promise.png);
+.front_team_purpose,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.front_team_purpose {
+
+    width: 672px;
+    height: 327px;
+
+    background-image: url(../source/purpose.png);
+    background-size: cover;
+    background-position: center;
+    border: 18px solid #A61C35;
+    border-radius: 10px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+ 
+}
+
+
+/* _team_promise */
+
+.flip_team_promise {
+
+    top: -15px;
+    left: -5px;
+
+    margin: 1.2em;
     width: 672px;
     height: 174px;
+    position: relative;
+    perspective: 1100px;
+
+}
+
+.flip_team_promise:hover .card {
+    transform: rotateY(180deg) scale(1.1);
+}
+
+.front_team_promise,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+}
+
+.front_team_promise {
+
+    width: 672px;
+    height: 174px;
+
+    background-image: url(../source/promise.png);
+    background-size: cover;
+    background-position: center;
+    border: 18px solid #A61C35;
+    border-radius: 10px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 
+.back {
+    background-color: rgb(243, 239, 234);
+    transform: rotateY(180deg);
+    border: 18px solid #A61C35;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    border-radius: 10px;
+    left: -35px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+
+
+/* 
 #drawer {
     box-shadow: 0 0 0 1px #6c4116;
     border-radius: 4px;
@@ -90,7 +213,7 @@ main {
 }
 
 #drawer:hover {
-    border-width: 0;
+    border-width: 10px;
     transform: scale(1.08);
     top: 5px;
 }
@@ -102,9 +225,58 @@ main {
     top: 0;
     opacity: 0.4;
     z-index: 1;
+} */
+
+@keyframes fade {
+    from {top:-100px;opacity: 0;}
+    to {top:0px;opacity:1;}
 }
 
+#container {
+    background-color: #eee;
+    text-align: center;
+  }
+  
+  #container a {
+    font-family: Bungee Inline;
+    font-size: 40px;
+    color: #505050;
+    text-decoration: none;
+  }
+  
+  #modal-open {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.679);
+    text-align: center;
+  }
+  
+  #modal-content {
+    margin-top: 40px;
+    width: 80%;
+    animation-name: fade;
+    animation-duration: 0.5s;
+    color: #eee;
+    overflow-y: auto;
+    font-family: "Dongle", serif;
+    font-size: 40px;
+  }
 
 
+  #modal-open a {
+    font-size: 50px;
+    color: red;
+    font-family: "Bagel Fat One", serif;
+  }
+  
+  #modal-open:target {
+    display: flex;
+    justify-content: center;
+  }
+  
 
-
+  

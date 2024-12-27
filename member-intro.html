@@ -90,6 +90,7 @@
             id="clickSound"
             src="source/mem_on_bell.wav"
             type="audio"
+            onloadstart="this.volume = 0.3"
           ></audio>
         </div>
       </div>
@@ -142,31 +143,35 @@
             </div>
           </div>
           <div class="mem_facelist">
-            <div class="mem_face mem_1"><a href=""></a></div>
-            <div class="mem_face mem_2"><a href=""></a></div>
-            <div class="mem_face mem_3"><a href=""></a></div>
-            <div class="mem_face mem_4"><a href=""></a></div>
-            <div class="mem_face mem_5"><a href=""></a></div>
+            <div class="mem_face mem_1"></div>
+            <div class="mem_face mem_2"></div>
+            <div class="mem_face mem_3"></div>
+            <div class="mem_face mem_4"></div>
+            <div class="mem_face mem_5"></div>
           </div>
         </div>
       </div>
     </div>
 
     <script>
-      //tree에 있는 멤버를 클릭 시 소리가 나도록 함
-      // 모든 .soundDiv 요소 선택
-      const divs = document.querySelectorAll(".mem_on");
-      // 각 div에 클릭 이벤트 추가
-      divs.forEach((div) => {
-        div.addEventListener("click", function () {
-          const sound = document.getElementById("clickSound");
-          sound.currentTime = 0; // 재생 위치 초기화
-          sound.play(); // 재생
-        });
-      });
 
       const modal = document.querySelector(".mem_modal");
-      let test = document.querySelector(".mem_4");
+      const profileimg = document.querySelector(".mem_choiced")
+      // 모든 .mem_on 요소 선택
+      const onement = document.querySelectorAll(".mem_on");
+      // 모든 .member div 요소를 선택
+      const members = document.querySelectorAll(".mem_face");
+      
+      // 각 멤버이름에 속성 추가
+      // 각 div에 추가할 이름 배열
+      const names = ["이기리", "김우경", "최수진", "유익환", "방은혜"];
+      // 각 div에 이름을 동적으로 추가
+      members.forEach((member, index) => {
+          member.setAttribute("data-name", names[index]); // data-name 속성 설정
+      });
+      onement.forEach((member, index) => {
+          member.setAttribute("data-name", names[index]); // data-name 속성 설정
+      })
       // 모달 열기
       function openModal() {
             modal.style.display = "block";
@@ -175,29 +180,61 @@
       function closeModal() {
           modal.style.display = "none";
       }
+      // 각 onement div에 클릭 이벤트 추가
+      onement.forEach((div) => {
+        div.addEventListener("click", function () {
+          //tree에 있는 멤버를 클릭 시 소리가 나도록 함
+          const sound = document.getElementById("clickSound");
+          sound.currentTime = 0; // 재생 위치 초기화
+          sound.play(); // 재생
 
-      test.addEventListener("click", () => {
-        openModal();
+          //멤버 오너먼트 클릭 시 모달에 클릭된 멤버 얼굴이 뜨기
+          // 선택한 div의 background-image 가져오기 (selectedimg)
+          const bgImage = getComputedStyle(div).backgroundImage;
+          
+          // 모달 내용에 background-image 설정
+          profileimg.style.backgroundImage = bgImage;
+          profileimg.style.backgroundSize ="contain";
+
+          // 모달 표시
+          openModal();  
+          
+          const selectedName = div.dataset.name;
+          members.forEach(e => {
+            if(selectedName === e.dataset.name){
+              e.style.opacity = "0.3";
+              e.style.pointerEvents = 'none'; // 클릭 비활성화
+            }else{
+              e.style.opacity = "1";
+              e.style.pointerEvents = "auto" //클릭 활성화
+            }
+          });
+        });
       });
 
+      // 모달 내부 div 클릭 이벤트 추가
+      members.forEach(modalDiv => {
+          modalDiv.addEventListener('click', () => {
+              const selectedName = modalDiv.dataset.name;
+
+              // 모달 닫기
+              modal.style.display = 'none';
+
+              // 외부 div 중 동일한 data-name을 가진 div 클릭 이벤트 트리거
+              onement.forEach(div => {
+                  if (div.dataset.name === selectedName) {
+                      div.click();
+                  }
+              });
+          });
+      });
       //모달 바깥 영역을 클릭하면 화면이 닫히게 함
       modal.addEventListener("click", (e) => {
         if (e.target === document.querySelector(".mem_modal")) {
           closeModal();
         }
       });
-
-      // 각 멤버이름에 속성 추가
-      // 각 div에 추가할 이름 배열
-      const names = ["이기리", "김우경", "최수진", "유익환", "방은혜"];
-
-      // 모든 .member div 요소를 선택
-      const members = document.querySelectorAll(".mem_face");
-
-      // 각 div에 이름을 동적으로 추가
-      members.forEach((member, index) => {
-          member.setAttribute("data-name", names[index]); // data-name 속성 설정
-      });
+ 
     </script>
   </body>
 </html>
