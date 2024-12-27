@@ -221,6 +221,7 @@
 .mem_face {
     width: 140px;
     height: 140px;
+    color: transparent;
 }
 .mem_face:hover::after{
     content: attr(data-name); /* JavaScript에서 설정한 data-name 속성을 표시 */
@@ -239,7 +240,31 @@
     width: 180px;
     height: 180px;
     color: transparent;
+    transition: 0.3s ease-out all;
+    backface-visibility: hidden; /* 뒷면 숨김 */
 }
+.flipper {
+    position: relative;
+    transform-style: preserve-3d; /* 3D 효과를 유지 */
+    transition: transform 0.6s; /* 회전 애니메이션 */
+}
+.back {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* 앞면 숨김 */
+    transform: rotateY(180deg); /* 180도 회전 */
+    border-radius: 90px;
+    border: 8px solid black;
+    box-sizing: border-box;
+  }
+  
+  /* hover 시 동작 */
+.flipper:hover {
+    transform: rotateY(180deg); /* 180도 회전 */
+  }
+
 
 /* 모달창 동작 관련 css */
 .mem_modal{
