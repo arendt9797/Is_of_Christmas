@@ -31,13 +31,13 @@ body {
 .menu {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 0px 0;
     font-family: "Dongle", serif;
     /* padding: 0px 10px 0px 10px; */
 }
 
 .menu a {
-    margin: 30px 20px;
+    margin: 0px 10px;
     text-decoration: none;
     box-sizing: border-box;
     width: 140px;
@@ -90,9 +90,9 @@ body {
 #jingleBell {
     width: 35px;
     height: 40px;
-    position: fixed;
+    position: absolute;
     top: 20px;
-    right: 700px;
+    right: 20px;
     background-color: transparent;
     background-image: url('../source/bell.png');
     /* background-position: center; */
@@ -101,6 +101,10 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#jingleBell.muted {
+    background-image: url(../source/bellmute.png);
 }
 
 
