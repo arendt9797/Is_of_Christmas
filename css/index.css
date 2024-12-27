@@ -94,7 +94,7 @@ body {
     top: 20px;
     right: 20px;
     background-color: transparent;
-    background-image: url('../source/bell.png');
+    background-image: url('../source/bellmute.png');
     /* background-position: center; */
     background-size: cover;
 
@@ -104,7 +104,7 @@ body {
 }
 
 #jingleBell.muted {
-    background-image: url(../source/bellmute.png);
+    background-image: url(../source/bell.png);
 }
 
 
