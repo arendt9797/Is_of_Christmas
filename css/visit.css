@@ -186,3 +186,18 @@ td {
 .card-text {
     padding: 0 24px;
 }
+
+#delete-icon {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 0;
+    margin: 0 0 12px 12px;
+}
+
+.card-delete {
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    right: 0px;
+}

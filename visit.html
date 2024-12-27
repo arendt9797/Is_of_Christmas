@@ -160,7 +160,7 @@
 
     </div>
 
-    <!-- 방명록 제출 영역역 -->
+    <!-- 방명록 제출 영역 -->
     <div class="visitOuterContainer">
         <div class="visitInputContainer">
             <div class="blank1"></div>
@@ -175,18 +175,17 @@
                 <input type="color" class="mode paint" id="colorPicker" value="#008000">
                 <div class="control-menu" id="mode">
                     <button class="mode paint" id="paint" type="button">
-                        <img src="./source/pencil.png" alt="paint" class="icon">
+                        <img src="./source/pencil.png" alt="paint" class="icon paint">
                         그리기
                     </button>
                     <button class="mode erase" id="erase" type="button">
-                        <img src="./source/erasor.png" alt="erase" class="icon">
+                        <img src="./source/erasor.png" alt="erase" class="icon erase">
                         지우기
                     </button>
                     <button class="mode paint" id="clearCanvas">
-                        <img src="./source/bin.png" alt="erase" class="icon bin">
+                        <img src="./source/bin.png" alt="erase" class="icon bin paint">
                     </button>
                 </div>
-
 
                 <!-- visit log container -->
                 <div class="visitLog">
@@ -194,10 +193,10 @@
                     </h2>
                     <form action=""></form>
                     <div class="visitName">
-                        <input type="text" id="visitName" placeholder="이름을 적어주세요" required>
+                        <input type="text" id="visitName" placeholder="이름을 적어주세요">
                     </div>
                     <div class="visitComment">
-                        <textarea name="visitComment" id="visitComment" placeholder="인사를 나눠주세요" required></textarea>
+                        <textarea name="visitComment" id="visitComment" placeholder="인사를 나눠주세요" style="resize: none;"></textarea>
                     </div>
                     <button type="submit" id="visitSubmit">내 트리 자랑하기</button>
                 </div>
@@ -205,8 +204,8 @@
             <div class="blank2"></div>
         </div>
     </div>
-
-    <!-- visit log list -->
+    
+    <!-- 방명록 카드 리스트 -->
     <div class="visitCardList">
         <div class="row" id="visitCard"></div>
     </div>

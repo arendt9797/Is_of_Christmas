@@ -108,6 +108,18 @@ $('#visitSubmit').click(async function () {
     };
 });
 
+// visit 카드 삭제하기
+$('#visitCard').on('click', '.card-delete', async function () {
+    let deleteCard = $(this).closest('.col-2')
+    let deleteId = deleteCard.attr('id')
+    db.collection('visit').doc(deleteId).delete().then(() => {
+        alert('그림이 삭제되었습니다!')
+        window.location.reload()
+    }).catch((e) => {
+        console.error("Error removing document : ", e)
+    })
+});
+
 // firebase에서 데이터 불러오기
 db.collection('visit')
     .get()
@@ -116,11 +128,15 @@ db.collection('visit')
             let pixelArt = doc.data().pixelArt;
             let visitName = doc.data().name;
             let visitComment = doc.data().comment;
+            let documentId = doc.id
 
             let tempHtml = `
-            <div class="col-2">
+            <div class="col-2" id="${documentId}">
                 <div class="card">
                     <div class="card-header">
+                        <button class="card-delete">
+                            <img src="./source/deleteCard.png" alt="x" id="delete-icon">
+                        </button>
                         <h3>${visitName}</h3>
                     </div>
                     <div class="card-body">
@@ -131,5 +147,5 @@ db.collection('visit')
             </div>`;
 
             $('#visitCard').append(tempHtml);
-        })
+        });
     });
