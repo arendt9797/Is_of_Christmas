@@ -144,6 +144,7 @@
 
 .mem_info a {
     text-decoration: none;
+    color: #000;
 }
 .mem_info a:visited {
     color: #000;
@@ -197,7 +198,7 @@
     font-weight: 400;
     font-style: normal;
     text-align: left;
-    line-height: 0.5;
+    line-height: 1.5;
 }
 
 .mem_info{

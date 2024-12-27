@@ -13,6 +13,185 @@
       rel="stylesheet"
     />
     <link rel="icon" href="./source/santa.png" />
+
+    <script type="module">
+      // **파이어베이스 쓸때 여기는 그냥 무조건 복사해서 붙여넣어서 시작하기
+      // Import the functions you need from the SDKs you need 파이어베이스 sdk라이브러리 가져오기
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDocs,
+        query,
+        where
+      } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional 파이어베이스 구성정보설정
+      const firebaseConfig = {
+        apiKey: "AIzaSyDArpVaRhRvTUo7UkhcnEkxTiD-ngAtbQI",
+        authDomain: "sparta-c0897.firebaseapp.com",
+        projectId: "sparta-c0897",
+        storageBucket: "sparta-c0897.firebasestorage.app",
+        messagingSenderId: "668908781143",
+        appId: "1:668908781143:web:e5826d2fd59b468fb7ed12",
+        measurementId: "G-PYWTZSCPM3",
+      };
+      // Initialize Firebase 파이어베이스 인스턴스 초기화
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      // **파이어베이스 쓸때 여기는 그냥 무조건 복사해서 붙여넣어서 시작하기
+
+      //파이어베이스에서 데이터 가져와서 넣어주기
+      let docs = await getDocs(collection(db, "christmas"));
+
+      docs.forEach((doc) => {
+        let row = doc.data();
+
+        let name = row["name"];
+        let mbti = row["mbti"];
+        let blog = row["blog"];
+        let ment = row["ment"];
+
+        let sch1 = row["sch1"];
+        let sch2 = row["shc2"];
+      });
+
+      //파이어베이스의 데이터 중 필드값과 현재 html문서 속 data-name 매치하기
+      async function fetchDocumentByField(fieldName, value) {
+        const q = query(
+          collection(db, "christmas"),
+          where(fieldName, "==", value)
+        );
+        const querySnapshot = await getDocs(q);
+
+        if (!querySnapshot.empty) {
+          return querySnapshot.docs[0].data(); // Return the first matching document's data
+        } else {
+          console.error("매칭되는 문서를 찾을 수 없습니다!");
+          return null;
+        }
+      }
+
+      const modal = document.querySelector(".mem_modal");
+      const profileimg = document.querySelector(".mem_choiced");
+      // 모든 .mem_on 요소 선택
+      const onement = document.querySelectorAll(".mem_on");
+      // 모든 .member div 요소를 선택
+      const members = document.querySelectorAll(".mem_face");
+
+      // 각 멤버이름에 속성 추가
+      // 각 div에 추가할 이름 배열
+      const names = ["이기리", "김우경", "최수진", "유익환", "방은혜"];
+      // 각 div에 이름을 동적으로 추가
+      members.forEach((member, index) => {
+        member.setAttribute("data-name", names[index]); // data-name 속성 설정
+      });
+      onement.forEach((member, index) => {
+        member.setAttribute("data-name", names[index]); // data-name 속성 설정
+      });
+      // 모달 열기
+      function openModal() {
+        modal.style.display = "block";
+      }
+      // 모달 닫기
+      function closeModal() {
+        modal.style.display = "none";
+      }
+
+      // HTML 요소 업데이트 함수
+      function updateMemInfo(data) {
+        // HTML 요소 선택
+        const nameE = document.querySelector(".fire_name p");
+        const mbtiE = document.querySelector(".fire_mbti p");
+        const blogE = document.querySelector(".fire_blog p a");
+        const mentE = document.querySelector(".fire_ment p span");
+        const sch1E = document.querySelector(".fire_sch1 p");
+        const sch2E = document.querySelector(".fire_sch2 p");
+
+        // 기존 데이터를 초기화
+        nameE.textContent = "";
+        mbtiE.textContent = "";
+        blogE.textContent = "";
+        mentE.textContent = "";
+        sch1E.innerHTML = "";
+        sch2E.innerHTML = "";
+
+        // 새로운 데이터 삽입
+        nameE.textContent = data.name || "이름 없음";
+        mbtiE.textContent = data.mbti || "MBTI 없음";
+        blogE.textContent = "블로그로 이동";
+        blogE.href = data.blog || "#"; // 블로그 링크 추가, 없으면 기본 #
+        mentE.textContent = data.ment || "멘트 없음"
+        sch1E.innerHTML = data.sch1 || "오전 스케쥴 없음"
+        sch2E.innerHTML = data.sch2 || "오후 스케쥴 없음"
+      }
+
+      // 각 onement div에 클릭 이벤트 추가
+      onement.forEach((div) => {
+        div.addEventListener("click", async function () {
+          //멤버 이름의 data-name 속성 가져오기
+          const dataName = div.getAttribute("data-name");
+          //파이어베이스 문서 데이터 중 이름필드 값과 data-name속성을 비교
+          const data = await fetchDocumentByField("name", dataName);
+
+          if (data) {
+            updateMemInfo(data); // 데이터 삽입
+          }
+
+          //tree에 있는 멤버를 클릭 시 소리가 나도록 함
+          const sound = document.getElementById("clickSound");
+          sound.currentTime = 0; // 재생 위치 초기화
+          sound.play(); // 재생
+
+          //멤버 오너먼트 클릭 시 모달에 클릭된 멤버 얼굴이 뜨기
+          // 선택한 div의 background-image 가져오기 (selectedimg)
+          const bgImage = getComputedStyle(div).backgroundImage;
+
+          // 모달 내용에 background-image 설정
+          profileimg.style.backgroundImage = bgImage;
+          profileimg.style.backgroundSize = "contain";
+
+          // 모달 표시
+          openModal();
+
+          //현재 선택된 멤버가 모달 창에서 클릭되지 않도록 함
+          const selectedName = div.dataset.name;
+          members.forEach((e) => {
+            if (selectedName === e.dataset.name) {
+              e.style.opacity = "0.3";
+              e.style.pointerEvents = "none"; // 클릭 비활성화
+            } else {
+              e.style.opacity = "1";
+              e.style.pointerEvents = "auto"; //클릭 활성화
+            }
+          });
+        });
+      });
+
+      // 모달 내부 div 클릭 이벤트 추가 - 클릭한 멤버가 모달에 주인공이 됨
+      members.forEach((modalDiv) => {
+        modalDiv.addEventListener("click", () => {
+          const selectedName = modalDiv.dataset.name;
+
+          // 모달 닫기
+          modal.style.display = "none";
+
+          // 외부 div 중 동일한 data-name을 가진 div 클릭 이벤트 트리거
+          onement.forEach((div) => {
+            if (div.dataset.name === selectedName) {
+              div.click();
+            }
+          });
+        });
+      });
+      //모달 바깥 영역을 클릭하면 화면이 닫히게 함
+      modal.addEventListener("click", (e) => {
+        if (e.target === document.querySelector(".mem_modal")) {
+          closeModal();
+        }
+      });
+    </script>
   </head>
   <script src="./js/index.js"></script>
   <body>
@@ -103,40 +282,34 @@
             <div class="mem_left">
               <div class="mem_choiced">선택된 멤버 얼굴</div>
               <div class="mem_infolist">
-                <div class="mem_name mem_info">
+                <div class="mem_name mem_info fire_name">
                   <p>이름</p>
                 </div>
-                <div class="mem_mbti mem_info">
+                <div class="mem_mbti mem_info fire_mbti">
                   <p>mbti</p>
                 </div>
-                <div class="mem_bloglink mem_info">
-                  <p><a href="">블로그로 이동</a></p>
+                <div class="mem_bloglink mem_info fire_blog">
+                  <p><a href="" target="_blank">블로그로 이동</a></p>
                 </div>
               </div>
             </div>
             <div class="mem_right">
-              <div class="mem_ment">
+              <div class="mem_ment fire_ment">
                 <p>
                   <span class="font_dongle">
                     여러분과 함께 돈 벌고 싶습니다!
-                    </span>
+                  </span>
                 </p>
               </div>
               <div class="mem_schedule">
                 <p class="schedulement">Christmas Schedule</p>
                 <div class="mem_sch_full">
-                  <div class="mem_sch_half">
-                    <p class="font_dongle scheduletext">
-                      10:00 공주 기상
-                    </p>
-                    <p>12:00 공주 크리스마스 만찬</p>
+                  <div class="mem_sch_half fire_sch1">
+                    <p class="font_dongle scheduletext"></p>
                   </div>
-                  <div class="mem_sch_half">
+                  <div class="mem_sch_half fire_sch2">
                     <p class="font_dongle scheduletext">
-                      14:00 우아한 공주들의 티타임
-                    </p>
-                    <p>16:00 으아한 공주들의 쏘맥타임</p>
-                    <p>19:00 으악한 공주들 집에 갈 시간</p>
+                      </p>
                   </div>
                 </div>
               </div>
@@ -152,89 +325,5 @@
         </div>
       </div>
     </div>
-
-    <script>
-
-      const modal = document.querySelector(".mem_modal");
-      const profileimg = document.querySelector(".mem_choiced")
-      // 모든 .mem_on 요소 선택
-      const onement = document.querySelectorAll(".mem_on");
-      // 모든 .member div 요소를 선택
-      const members = document.querySelectorAll(".mem_face");
-      
-      // 각 멤버이름에 속성 추가
-      // 각 div에 추가할 이름 배열
-      const names = ["이기리", "김우경", "최수진", "유익환", "방은혜"];
-      // 각 div에 이름을 동적으로 추가
-      members.forEach((member, index) => {
-          member.setAttribute("data-name", names[index]); // data-name 속성 설정
-      });
-      onement.forEach((member, index) => {
-          member.setAttribute("data-name", names[index]); // data-name 속성 설정
-      })
-      // 모달 열기
-      function openModal() {
-            modal.style.display = "block";
-      }
-      // 모달 닫기
-      function closeModal() {
-          modal.style.display = "none";
-      }
-      // 각 onement div에 클릭 이벤트 추가
-      onement.forEach((div) => {
-        div.addEventListener("click", function () {
-          //tree에 있는 멤버를 클릭 시 소리가 나도록 함
-          const sound = document.getElementById("clickSound");
-          sound.currentTime = 0; // 재생 위치 초기화
-          sound.play(); // 재생
-
-          //멤버 오너먼트 클릭 시 모달에 클릭된 멤버 얼굴이 뜨기
-          // 선택한 div의 background-image 가져오기 (selectedimg)
-          const bgImage = getComputedStyle(div).backgroundImage;
-          
-          // 모달 내용에 background-image 설정
-          profileimg.style.backgroundImage = bgImage;
-          profileimg.style.backgroundSize ="contain";
-
-          // 모달 표시
-          openModal();  
-          
-          const selectedName = div.dataset.name;
-          members.forEach(e => {
-            if(selectedName === e.dataset.name){
-              e.style.opacity = "0.3";
-              e.style.pointerEvents = 'none'; // 클릭 비활성화
-            }else{
-              e.style.opacity = "1";
-              e.style.pointerEvents = "auto" //클릭 활성화
-            }
-          });
-        });
-      });
-
-      // 모달 내부 div 클릭 이벤트 추가
-      members.forEach(modalDiv => {
-          modalDiv.addEventListener('click', () => {
-              const selectedName = modalDiv.dataset.name;
-
-              // 모달 닫기
-              modal.style.display = 'none';
-
-              // 외부 div 중 동일한 data-name을 가진 div 클릭 이벤트 트리거
-              onement.forEach(div => {
-                  if (div.dataset.name === selectedName) {
-                      div.click();
-                  }
-              });
-          });
-      });
-      //모달 바깥 영역을 클릭하면 화면이 닫히게 함
-      modal.addEventListener("click", (e) => {
-        if (e.target === document.querySelector(".mem_modal")) {
-          closeModal();
-        }
-      });
- 
-    </script>
   </body>
 </html>
