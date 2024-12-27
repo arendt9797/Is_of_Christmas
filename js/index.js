@@ -4,6 +4,7 @@
 //     christmasBgm.volume = 0.1;
 // };
 
+
 const playPauseButton = document.getElementById("jingleBell");
 const audio = document.getElementById("christmasBgm");
 // const icon = document.getElementById("icon");
@@ -24,3 +25,6 @@ playPauseButton.addEventListener("click", () => {
         // playPauseButton.innerHTML = `<span id="icon">▶️</span> Play Music`;
     }
 });
+
+
+
