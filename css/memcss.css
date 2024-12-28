@@ -13,11 +13,11 @@
 }
 .mem_treebox{
     width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto 30px auto햣;
     padding: 20px 100px;
     align-items: center;
     box-sizing: border-box;
-    background-color: rgba(225, 225, 225, 0.2);
+    background-color: #30384e;
 }
 
 .mem_tree{
@@ -243,28 +243,6 @@
     transition: 0.3s ease-out all;
     backface-visibility: hidden; /* 뒷면 숨김 */
 }
-.flipper {
-    position: relative;
-    transform-style: preserve-3d; /* 3D 효과를 유지 */
-    transition: transform 0.6s; /* 회전 애니메이션 */
-}
-.back {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden; /* 앞면 숨김 */
-    transform: rotateY(180deg); /* 180도 회전 */
-    border-radius: 90px;
-    border: 8px solid black;
-    box-sizing: border-box;
-  }
-  
-  /* hover 시 동작 */
-.flipper:hover {
-    transform: rotateY(180deg); /* 180도 회전 */
-  }
-
 
 /* 모달창 동작 관련 css */
 .mem_modal{

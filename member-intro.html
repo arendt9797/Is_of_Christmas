@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>크리스마스 I들</title>
+    <title>크리스마스의 'I'들</title>
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/memcss.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -87,53 +87,27 @@
       // 각 .back div에 적용 시킬 이미지 링크
       const photo = [
         {
-          "이기리":
+          이기리:
             "https://ca.slack-edge.com/T06B9PCLY1E-U084NE9HLLC-9f552674ce26-512",
         },
         {
-          "김우경":
+          김우경:
             "https://ca.slack-edge.com/T06B9PCLY1E-U07V53SN6UX-23e93f3ddf49-512",
         },
         {
-          "최수진":
+          최수진:
             "https://ca.slack-edge.com/T06B9PCLY1E-U0824C3SLCC-1013bd553f6a-512",
         },
         {
-          "유익환":
+          유익환:
             "https://ca.slack-edge.com/T06B9PCLY1E-U07UMLZ1JQM-ffb6173e01dd-512",
         },
         {
-          "방은혜":
+          방은혜:
             "https://ca.slack-edge.com/T06B9PCLY1E-U0827KU3QRF-88fd43105cc2-512",
         },
       ];
 
-      // .mem_choiced의 data-name 값을 읽어와 .back에 배경 이미지를 설정하는 함수
-      function updateBackImage() {
-        const selectedName = profileimg.getAttribute("data-name"); // 현재 선택된 data-name
-        const backElement = document.querySelector(".back"); // 뒷면 요소
-
-        // photo 배열에서 선택된 이름에 해당하는 이미지 URL 찾기
-        let imageUrl = null;
-        photo.forEach((entry) => {
-          if (entry[selectedName]) {
-            imageUrl = entry[selectedName];
-          }
-        });
-
-        // 배경 이미지 업데이트
-        if (imageUrl) {
-          backElement.style.backgroundImage = `url('${imageUrl}')`;
-          backElement.style.backgroundSize = "cover";
-          backElement.style.backgroundPosition = "center";
-        } else {
-          console.warn("이미지 URL을 찾을 수 없습니다!");
-        }
-      }
-      
-      // 초기 업데이트 호출
-      updateBackImage();
-      
       // 각 div에 이름을 동적으로 추가
       members.forEach((member, index) => {
         member.setAttribute("data-name", names[index]); // data-name 속성 설정
@@ -336,10 +310,7 @@
         <div class="mem_cardbox">
           <div class="mem_profile">
             <div class="mem_left">
-              <div class="flipper">
                 <div class="mem_choiced front">선택된 멤버 얼굴</div>
-                <div class="back"></div>
-              </div>
               <div class="mem_infolist">
                 <div class="mem_name mem_info fire_name">
                   <p>이름</p>
@@ -374,11 +345,11 @@
             </div>
           </div>
           <div class="mem_facelist">
-            <div class="mem_face mem_1">이기리</div>
-            <div class="mem_face mem_2">김우경</div>
-            <div class="mem_face mem_3">최수진</div>
-            <div class="mem_face mem_4">유익환</div>
-            <div class="mem_face mem_5">방은혜</div>
+            <div class="mem_face mem_1"></div>
+            <div class="mem_face mem_2"></div>
+            <div class="mem_face mem_3"></div>
+            <div class="mem_face mem_4"></div>
+            <div class="mem_face mem_5"></div>
           </div>
         </div>
       </div>
