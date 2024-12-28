@@ -13,11 +13,12 @@
 }
 .mem_treebox{
     width: 1000px;
-    margin: 0 auto 30px auto햣;
+    margin: 0 auto 30px auto;
     padding: 20px 100px;
     align-items: center;
     box-sizing: border-box;
     background-color: #30384e;
+    position: relative;
 }
 
 .mem_tree{
@@ -246,7 +247,7 @@
 
 /* 모달창 동작 관련 css */
 .mem_modal{
-    position: fixed;
+    position: absolute;
     display:none;
 
     top: 50%;
@@ -257,7 +258,7 @@
     width: 100vmax;
     height: 100vh;
 
-    background-color: rgba(0, 0, 0, 0.6);
+    /* background-color: rgba(0, 0, 0, 0.6); */
 }
 .mem_btn {
     width: 100%;
