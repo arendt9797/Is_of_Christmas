@@ -1,7 +1,17 @@
 /* ---------- 메뉴바 ------------- */
 .menu > a:hover {
     color: white;
-    }
+}
+
+.container-menu {
+    height: 352px;
+    padding-top: 14px;
+}
+
+#main-title {
+    margin-bottom: 15px;
+}
+
 /* ----------- 그림판 및 인풋 컨테이너 ----------- */
 .visitOuterContainer {
     display: flex;
